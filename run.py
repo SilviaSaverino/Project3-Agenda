@@ -40,6 +40,6 @@ def check_week():
 
 def options():
     print('Choose a different option:\n 1 - Check your plans for the week. \n 2 - Create an event. \n 3 - Cancel event.\n ')
-    
+    #NoteTOSelf: once here the user can not continue at the moment!
 
 weekly_agenda()    
