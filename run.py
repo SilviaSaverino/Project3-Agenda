@@ -1,5 +1,13 @@
 #Allows to save your data once you've done using this programm
 import pickle
+#Get and allows to display actual date and time
+import datetime
+#Allows to set a time interval of x seconds between operations
+import time
+
+now = datetime.datetime.now()
+print ("Welcome! Current date and time:")
+print (now.strftime("Today is %A, %Y-%m-%d %H:%M"))
 
 week = {'Monday: [] ,Tuesday: [], Wednesday: [], Thursday: [], Friday: [], Saturday:[], Sunday: []'}
 
@@ -7,7 +15,7 @@ def weekly_agenda():
     """
     Starts the programm asking the user what tasks would it like to be performed
     """
-    choice = input('Welcome! What would you like me to do? Please, insert one of the following:\n 1 - Check your plans for the week. \n 2 - Create an event. \n 3 - Cancel event.\n')
+    choice = input('What would you like to do? Please, insert one of the following:\n 1 - Check your plans for the week. \n 2 - Create an event. \n 3 - Cancel event.\n')
     if choice == '1':
         check_week()
     elif choice == '2':
@@ -26,20 +34,18 @@ def check_week():
     functions accordingly to Y or N choice.
     Runs only if the user select option 1.
     """
-    correct = input('You would like to check your agenda, correct? Y/N \n') #NoteTOSelf: must make sure also a lower N or Y will be fine
+    correct = input('You would like to check your agenda, correct? Y/N \n').upper() 
     if correct == 'Y':
+        print('Thank you. Loading agenda...')
+        time.sleep(2)
+        #add function to open the agenda here
         print('YES function \n')
     elif correct == 'N':
         print('Sure, select a different option \n')
-        options()
+        weekly_agenda()
     else:
         print('This options is not correct, please input "Y" for yes, and "N" for no \n')    
         # When the answer is not correct, the program will start again
         check_week()         
-
-
-def options():
-    print('Choose a different option:\n 1 - Check your plans for the week. \n 2 - Create an event. \n 3 - Cancel event.\n ')
-    #NoteTOSelf: once here the user can not continue at the moment!
 
 weekly_agenda()    
