@@ -1,23 +1,24 @@
-#Allows to save your data once you've done using this programm
+# Allows to save your data once you've done using this programm
 import pickle
-#Get and allows to display actual date and time
+# Get and allows to display actual date and time
 import datetime
-#Allows to set a time interval of x seconds between operations
+# Allows to set a time interval of x seconds between operations and calendar will show a standard calendar
 import time
 import calendar
 
-#from datetime
+# from datetime
 now = datetime.datetime.now()
-print ("Welcome! Current date and time:")
-print (now.strftime("Today is %A, %Y-%m-%d %H:%M"))
+print("Welcome! Current date and time:")
+print(now.strftime("Today is %A, %Y-%m-%d %H:%M"))
 
 
-#from calendar
+# from calendar
 c = calendar.TextCalendar(calendar.MONDAY)
-str = c.formatmonth(2023,1)
-print('Welcome to your Agenda' , str)
+str = c.formatmonth(2023, 1)
+print('Welcome to your Agenda', str)
 
 week = {'Monday: [] ,Tuesday: [], Wednesday: [], Thursday: [], Friday: [], Saturday:[], Sunday: []'}
+
 
 def weekly_agenda():
     """
@@ -28,10 +29,10 @@ def weekly_agenda():
         check_week()
     elif choice == '2':
         print('ciao')
-        #insert function here
-    elif choice ==  '3':
+        # insert function here
+    elif choice == '3':
         print('hola')
-        #insert function here
+        # insert function here
     else:
         print('Incorrect option. Your input must be a number from the list \n')   
 
@@ -46,7 +47,7 @@ def check_week():
     if correct == 'Y':
         print('Thank you. Loading agenda...')
         time.sleep(2)
-        #add function to open the agenda here
+        # add function to open the agenda here
         print('YES function \n')
     elif correct == 'N':
         print('Sure, select a different option \n')
@@ -56,4 +57,6 @@ def check_week():
         # When the answer is not correct, the program will start again
         check_week()         
 
-weekly_agenda()    
+
+weekly_agenda()  
+
