@@ -4,10 +4,18 @@ import pickle
 import datetime
 #Allows to set a time interval of x seconds between operations
 import time
+import calendar
 
+#from datetime
 now = datetime.datetime.now()
 print ("Welcome! Current date and time:")
 print (now.strftime("Today is %A, %Y-%m-%d %H:%M"))
+
+
+#from calendar
+c = calendar.TextCalendar(calendar.MONDAY)
+str = c.formatmonth(2023,1)
+print('Welcome to your Agenda' , str)
 
 week = {'Monday: [] ,Tuesday: [], Wednesday: [], Thursday: [], Friday: [], Saturday:[], Sunday: []'}
 
