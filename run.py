@@ -21,6 +21,7 @@ c = calendar.TextCalendar(calendar.MONDAY)
 future_date = c.formatmonth(2023, 1)
 print('Welcome to your Agenda', future_date)
 
+#Creates an array of 31 days with nested arrays ; index[1] of each index[0] for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
 
 

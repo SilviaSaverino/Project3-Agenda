@@ -3,11 +3,17 @@
 
 print('CIAO')
 
-daysList = [[] for x in range(3)]
 
-for d in daysList:
-    d.insert(0, 'Task')
+def add_event():
+    day = input('Choose a day:')
+    taskDetail = input('Tell me your task for the day:')
+    add_task(day, taskDetail)
 
-daysList[2].insert(1,'New Task')
 
-print(daysList)
+
+def add_task(day, taskDetail):
+    newPosTask = len(daysList[day - 1])
+    daysList[day - 1].append(newPosTask, taskDetail)
+
+
+
