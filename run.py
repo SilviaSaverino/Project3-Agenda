@@ -6,6 +6,8 @@ import datetime
 import time
 import calendar
 
+#import test
+
 # from datetime
 now = datetime.datetime.now()
 print("Welcome! Current date and time:")
@@ -14,21 +16,21 @@ print(now.strftime("Today is %A, %Y-%m-%d %H:%M"))
 
 # from calendar
 c = calendar.TextCalendar(calendar.MONDAY)
-str = c.formatmonth(2023, 1)
-print('Welcome to your Agenda', str)
+future_date = c.formatmonth(2023, 1)
+print('Welcome to your Agenda', future_date)
 
 week = {'Monday: [] ,Tuesday: [], Wednesday: [], Thursday: [], Friday: [], Saturday:[], Sunday: []'}
 
 
 def weekly_agenda():
     """
-    Starts the programm asking the user what tasks would it like to be performed
+    Starts the programm asking the which task will be execute
     """
-    choice = input('What would you like to do? Please, insert one of the following:\n 1 - Check your plans for the week. \n 2 - Create an event. \n 3 - Cancel event.\n')
+    choice = input('What would you like to do? Please, insert one of the following:\n 1 - Check your plans for the week. \n 2 - Add an event. \n 3 - Cancel event.\n')
     if choice == '1':
         check_week()
     elif choice == '2':
-        print('ciao')
+        add_event()
         # insert function here
     elif choice == '3':
         print('hola')
@@ -53,7 +55,28 @@ def check_week():
         print('Sure, select a different option \n')
         weekly_agenda()
     else:
-        print('This options is not correct, please input "Y" for yes, and "N" for no \n')    
+        print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
+        # When the answer is not correct, the program will start again
+        check_week()         
+
+
+def add_event():
+    """
+    Check if the user wants to add a task in his/her agenda and runs 
+    functions accordingly to Y or N choice.
+    Runs only if the user select option 2.
+    """
+    add = input('You would like to add an event in your agenda, correct? Y/N \n').upper() 
+    if add == 'Y':
+        print('Thank you. Loading agenda...')
+        time.sleep(2)
+        # add function to open the agenda here
+        print('YES function \n')
+    elif add == 'N':
+        print('Sure, select a different option \n')
+        weekly_agenda()
+    else:
+        print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
         # When the answer is not correct, the program will start again
         check_week()         
 
