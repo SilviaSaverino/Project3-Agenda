@@ -8,6 +8,8 @@ import calendar
 
 #import test
 
+
+
 # from datetime
 now = datetime.datetime.now()
 print("Welcome! Current date and time:")
@@ -19,7 +21,7 @@ c = calendar.TextCalendar(calendar.MONDAY)
 future_date = c.formatmonth(2023, 1)
 print('Welcome to your Agenda', future_date)
 
-week = {'Monday: [] ,Tuesday: [], Wednesday: [], Thursday: [], Friday: [], Saturday:[], Sunday: []'}
+daysList = [[] for x in range(31)]
 
 
 def weekly_agenda():

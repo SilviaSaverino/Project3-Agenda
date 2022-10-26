@@ -3,10 +3,11 @@
 
 print('CIAO')
 
-def days():
-    global day
-    day = input("Which day? ").capitalize()
-    week_list = [day_list for day_list in week.keys()]
-    if day not in week_list:
-        print("Invalid day.")
-        days()
+daysList = [[] for x in range(3)]
+
+for d in daysList:
+    d.insert(0, 'Task')
+
+daysList[2].insert(1,'New Task')
+
+print(daysList)
