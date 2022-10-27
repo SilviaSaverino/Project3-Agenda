@@ -17,9 +17,10 @@ print(now.strftime("Today is %A, %Y-%m-%d %H:%M"))
 
 
 # from calendar
-c = calendar.TextCalendar(calendar.MONDAY)
-future_date = c.formatmonth(2023, 1)
-print('Welcome to your Agenda', future_date)
+def show_calendar():
+    c = calendar.TextCalendar(calendar.MONDAY)
+    future_date = c.formatmonth(2023, 1)
+    print('Calendar', future_date)
 
 #Creates an array of 31 days with nested arrays ; index[1] of each index[0] for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
@@ -90,8 +91,9 @@ def add_event():
     if add == 'Y':
         print('Thank you. Loading agenda...')
         time.sleep(2)
-        # add function to open the agenda here
-        print('YES function \n')
+        show_calendar()
+        write_task()
+        
     elif add == 'N':
         print('Sure, select a different option \n')
         weekly_agenda()
