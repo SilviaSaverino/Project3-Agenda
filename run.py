@@ -2,12 +2,10 @@
 import pickle
 # Get and allows to display actual date and time
 import datetime
-# Allows to set a time interval of x seconds between operations and calendar will show a standard calendar
+# Allows to set a time interval of x seconds between operations and 
+# calendar will show a standard calendar
 import time
 import calendar
-
-#import test
-
 
 
 # from datetime
@@ -18,12 +16,18 @@ print(now.strftime("Today is %A, %Y-%m-%d %H:%M"))
 
 # from calendar
 def show_calendar():
+    """
+    Shows an actual calendar to the user, for a better user experience.
+    """
     c = calendar.TextCalendar(calendar.MONDAY)
     future_date = c.formatmonth(2023, 1)
     print('Calendar', future_date)
 
-#Creates an array of 31 days with nested arrays ; index[1] of each index[0] for each of the 31 arrays,will be calling a function
+
+# Creates an array of 31 days with nested arrays ; index[1] of each index[0] 
+# for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
+
 
 def add_task(day, task_detail):
     """
@@ -37,10 +41,10 @@ def write_task():
     """
     Ask the user to select a day and what it has to note down for that day.
     """
-    day = input('Choose a day:')
-    task_detail = input('Tell me your task for the day:')
+    day = input('Choose a day:\n')
+    task_detail = input('Tell me your task for the day:\n')
+    print('Thanks. Adding task to your agenda...')
     add_task(day, task_detail)
-
 
 
 def weekly_agenda():
@@ -66,7 +70,7 @@ def check_week():
     functions accordingly to Y or N choice.
     Runs only if the user select option 1.
     """
-    correct = input('You would like to check your agenda, correct? Y/N \n').upper() 
+    correct = input('Check your agenda, correct? Y/N \n').upper() 
     if correct == 'Y':
         print('Thank you. Loading agenda...')
         time.sleep(2)
@@ -87,11 +91,12 @@ def add_event():
     functions accordingly to Y or N choice.
     Runs only if the user select option 2.
     """
-    add = input('You would like to add an event in your agenda, correct? Y/N \n').upper() 
+    add = input('Add an event in your agenda, correct? Y/N \n').upper() 
     if add == 'Y':
-        print('Thank you. Loading agenda...')
+        print('Thank you. Loading agenda...\n')
         time.sleep(2)
         show_calendar()
+        time.sleep(1)
         write_task()
         
     elif add == 'N':
