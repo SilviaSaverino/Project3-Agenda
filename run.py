@@ -24,6 +24,23 @@ print('Welcome to your Agenda', future_date)
 #Creates an array of 31 days with nested arrays ; index[1] of each index[0] for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
 
+def add_task(day, task_detail):
+    """
+    Runs through the daysList lists and assigns the task to the selected day
+    """
+    new_pos_task = len(daysList[day - 1])
+    daysList[day - 1].append(new_pos_task, task_detail)
+
+
+def write_task():
+    """
+    Ask the user to select a day and what it has to note down for that day.
+    """
+    day = input('Choose a day:')
+    task_detail = input('Tell me your task for the day:')
+    add_task(day, task_detail)
+
+
 
 def weekly_agenda():
     """

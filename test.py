@@ -2,18 +2,18 @@
 #To be deleted before submitting the project.abs
 
 print('CIAO')
+daysList = [[] for x in range(31)]
 
 
-def add_event():
+def write_task():
     day = input('Choose a day:')
-    taskDetail = input('Tell me your task for the day:')
-    add_task(day, taskDetail)
+    task_detail = input('Tell me your task for the day:')
+    add_task(day, task_detail)
 
 
-
-def add_task(day, taskDetail):
-    newPosTask = len(daysList[day - 1])
-    daysList[day - 1].append(newPosTask, taskDetail)
+def add_task(day, task_detail):
+    new_pos_task = len(daysList[day - 1])
+    daysList[day - 1].append(new_pos_task, task_detail)
 
 
 
