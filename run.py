@@ -10,8 +10,8 @@ import calendar
 
 # from datetime
 now = datetime.datetime.now()
-print("Welcome! Current date and time:")
-print(now.strftime("Today is %A, %Y-%m-%d %H:%M"))
+print("Welcome to your Agenda\n")
+print(now.strftime("Today is %A, %Y-%m-%d %H:%M \n"))
 
 
 # from calendar
