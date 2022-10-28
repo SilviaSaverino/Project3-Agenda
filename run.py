@@ -41,9 +41,13 @@ def write_task():
     """
     Ask the user to select a day and what it has to note down for that day.
     """
-    day = input('Choose a day:\n')
-    task_detail = input('Tell me your task for the day:\n')
-    print('Thanks. Adding task to your agenda...')
+    day = int(input('Choose a day of the month:\n'))
+    if day in range(len(daysList)):
+        print(f'{day} sounds like a good day!\n') 
+    else:
+        print(f'Sadly {day} is not a valid option:\n')
+        write_task()
+        time.sleep(1)
     add_task(day, task_detail)
 
 
