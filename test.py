@@ -14,13 +14,41 @@ def task_info():
     """
     task_detail = input(str('What is your task?\n'))  
     print(f'Adding "{task_detail}" in your Agenda\n')
-    print('Would you like to save this task?\n')
-    save_edit()
-
+    next = input(str('Would you like to save this task?\n Y/N \n').upper())
+    if next == 'Y':
+        print('Saving task...\n')
+        time.sleep(1)
+        print('Saved.\n')
+        continue_or_exit()
+    elif next == 'N':
+        print('All right then.')
+        continue_or_exit()
+    else:
+        print('Try again')
+        task_info()    
+       
 
 task_info()
 
 
+def continue_or_exit():
+    """
+    Check if the user would like to continue the program, or exit it
+    """
+    print('Would you like to continue or exit the Agenda?\n')
+    continue_exit = input(str('Select C to continue, or E to exit the Agenda').upper())
+    if continue_exit == 'C':
+        print("Let's add one more task then.\n")
+        task_info()
+    elif continue_exit == 'E':
+        print('Exiting...')
+        time.sleep(1)
+        print('Program terminated. Have a great day!')  
+        # add function to exit the program  
+    else:
+        print('Incorrect option. Try again.')
+        continue_or_exit()    # is this going to work? check!        
+   
 def save_edit():
     """
     Check if the user would like to save the task in the
@@ -38,27 +66,7 @@ def save_edit():
         # another function here.
     else:
         print('Not a correct option\n')
-    save_edit()    
-    
-
-def continue_or_exit():
-    """
-    Check if the user would like to continue the program, or exit it
-    """
-    continue_exit = input(str('Select C to continue, or E to exit the Agenda').upper())
-    if continue_exit == 'C':
-        print("Let's add one more task then.\n")
-        task_info()
-    elif continue_exit == 'E':
-        print('Exiting...')
-        time.sleep(1)
-        print('Program terminated. Have a great day!')  
-        # add function to exit the program  
-    else:
-        print('Incorrect option. Try again.')
-        continue_or_exit()    # is this going to work? check!        
-   
-save_edit()
+    save_edit() 
 
 #add_task(day, task_detail)
 
