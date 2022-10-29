@@ -28,7 +28,7 @@ def show_calendar():
 # for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
 
-# Below some time of the day options for the user
+# Below some time of the day options for the user to chose from
 MORNING = 'anytime from 7:00 to 12:00\n'
 AFTERNOON = 'anytime from 12:00 to 18:00\n'
 EVENING = 'anytime from 18:00 to 23:00\n'
@@ -47,7 +47,8 @@ def weekly_agenda():
     """
     Starts the programm asking the which task will be execute
     """
-    choice = input('What would you like to do? Please, insert one of the following:\n 1 - Check your plans for the week. \n 2 - Add an event. \n 3 - Cancel event.\n')
+    print('What would you like to do? Please, insert one of the following:\n')
+    choice = input('1-Check your Agenda.\n2-Add event.\n3-Cancel event.\n')
     if choice == '1':
         check_week()
     elif choice == '2':
