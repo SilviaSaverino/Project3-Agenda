@@ -124,11 +124,31 @@ def write_task():
     """
     day = int(input('Choose a day of the month:\n'))
     if day in range(len(daysList)):
-        print(f'{day} sounds like a good day!\n') 
+        print(f'{day} sounds like a good day!\n')
+        time_of_the_day() 
     else:
         print(f'Sadly {day} is not a valid option:\n')
         write_task()
         time.sleep(1)
+
+
+def time_of_the_day():
+    """
+    Ask the user if she/he would like to perform her/his task during
+    the morning, afternoon, evening or at night.
+    """
+    time = str(input('Any particular time of the day?\n').upper())
+    if time == 'MORNING':
+        print('You should do this between', MORNING)
+    elif time == 'AFTERNOON':
+        print('You should do this between', AFTERNOON)
+    elif time == 'EVENING':
+        print('You should do this between', EVENING)
+    elif time == 'NIGHT':
+        print('At night?', NIGHT)
+    else:
+        print('When again? Morning, afternoon, evening or night?\n')
+        time_of_the_day() #not sure why this doesn't run...
 
 weekly_agenda()  
 
