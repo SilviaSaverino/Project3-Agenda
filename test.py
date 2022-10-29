@@ -4,28 +4,22 @@
 print('CIAO')
 daysList = [[] for x in range(31)]
 
+def write_task():
+    """
+    Ask the user to select a day and what it has to note down for that day.
+    """
+    day = int(input('Choose a day of the month:\n'))
+    if day in range(len(daysList)):
+        print(f'{day} sounds like a good day!\n')
+        time_of_the_day() 
+    else:
+        print(f'Sadly {day} is not a valid option:\n')
+        write_task()
+        time.sleep(1)
+    add_task(day, task_detail)
 
 # funzione per sapere di quale task si tratta. 
-def task_info():
-    """
-    Ask the user to write the task of the day and if it would
-    like to save it or not, and carrys on accordingly to the user
-    choice
-    """
-    task_detail = input(str('What is your task?\n'))  
-    print(f'Adding "{task_detail}" in your Agenda\n')
-    next = input(str('Would you like to save this task?\n Y/N \n').upper())
-    if next == 'Y':
-        print('Saving task...\n')
-        time.sleep(1)
-        print('Saved.\n')
-        continue_or_exit()
-    elif next == 'N':
-        print('All right then.')
-        continue_or_exit()
-    else:
-        print('Try again')
-        task_info()    
+    
        
 
 task_info()
@@ -36,7 +30,7 @@ def continue_or_exit():
     Check if the user would like to continue the program, or exit it
     """
     print('Would you like to continue or exit the Agenda?\n')
-    continue_exit = input(str('Select C to continue, or E to exit the Agenda').upper())
+    continue_exit = input(str('Select C to continue, or E to exit the Agenda')).upper()
     if continue_exit == 'C':
         print("Let's add one more task then.\n")
         task_info()
@@ -54,11 +48,11 @@ def save_edit():
     Check if the user would like to save the task in the
     file.csv and continue accordingly to the user choice.
     """   
-    saving_edit = input(str('Select S for saving, or M to Modify task\n'))
+    saving_edit = input(str('Select S for saving, or M to Modify task\n')).upper()
     if saving_edit == 'S':
         print('Great! Saving task...\n')
-        time.sleep()
-        # run function to save
+        time.sleep(1)
+        add_task(day, task_detail)
         print('Saved. Would you like to continue or exit?\n')
         continue_or_exit()
     elif saving_edit == 'M':

@@ -117,6 +117,7 @@ def write_task():
         print(f'Sadly {day} is not a valid option:\n')
         write_task()
         time.sleep(1)
+    
     add_task(day, task_detail)
 
 
@@ -143,6 +144,30 @@ def time_of_the_day():
         print('When again? Morning, afternoon, evening or night?\n')
         # When the answer is not correct, this function will run again
         time_of_the_day() 
+    task_info()
+
+def task_info():
+    """
+    Ask the user to write the task of the day and if it would
+    like to save it or not, and carrys on accordingly to the user
+    choice
+    """
+    task_detail = input(str('What is your task?\n'))  
+    print(f'Adding "{task_detail}" in your Agenda\n')
+    next = input(str('Would you like to save this task?\n Y/N \n')).upper()
+    if next == 'Y':
+        print('Saving task...\n')
+        time.sleep(1)
+        print('Saved.\n')
+        continue_or_exit()
+    elif next == 'N':
+        print('All right then.')
+        continue_or_exit()
+    else:
+        print('Try again')
+        task_info()
+
+
 
 weekly_agenda()  
 
