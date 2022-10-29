@@ -62,7 +62,6 @@ def check_week():
             # When the answer is not correct, the program will start again
 
 
-# from calendar
 def show_calendar():
     """
     Shows an actual calendar to the user, for a better user experience.
