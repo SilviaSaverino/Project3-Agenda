@@ -4,59 +4,67 @@
 print('CIAO')
 daysList = [[] for x in range(31)]
 
-MORNING = 'anytime from 7:00 to 12:00\n'
-AFTERNOON = 'anytime from 12:00 to 18:00\n'
-EVENING = 'anytime from 18:00 to 23:00\n'
-NIGHT = 'You deserve some sleep! Select a different time of the day.\n'
 
-
-def write_task():
-    day = int(input('Choose a day of the month:\n'))
-    if day in range(len(daysList)):
-        print(f'{day} sounds like a good day!\n') 
-    else:
-        print(f'Sadly {day} is not a valid option:\n')
-        write_task()
-        time.sleep(1)
-    time_of_the_day()
-
-
-def time_of_the_day():
+# funzione per sapere di quale task si tratta. 
+def task_info():
     """
-    Ask the user if she/he would like to perform her/his task during
-    the morning, afternoon, evening or at night.
+    Ask the user to write the task of the day and if it would
+    like to save it or not, and carrys on accordingly to the user
+    choice
+    """
+    task_detail = input(str('What is your task?\n'))  
+    print(f'Adding "{task_detail}" in your Agenda\n')
+    print('Would you like to save this task?\n')
+    save_edit()
+
+
+task_info()
+
+
+def save_edit():
+    """
+    Check if the user would like to save the task in the
+    file.csv and continue accordingly to the user choice.
     """   
-    time = str(input('Any particular time of the day?\n').upper())
-    if time == 'MORNING':
-        print('You should do this between', MORNING)
-    elif time == 'AFTERNOON':
-        print('You should do this between', AFTERNOON)
-    elif time == 'EVENING':
-        print('You should do this between', EVENING)
-    elif time == 'NIGHT':
-        print('At night?', NIGHT)
+    saving_edit = input(str('Select S for saving, or M to Modify task\n'))
+    if saving_edit == 'S':
+        print('Great! Saving task...\n')
+        time.sleep()
+        # run function to save
+        print('Saved. Would you like to continue or exit?\n')
+        continue_or_exit()
+    elif saving_edit == 'M':
+        print('Sure, what would you like to change?\n')
+        # another function here.
     else:
-        print('When again? Morning, afternoon, evening or night?\n')
-    time_of_the_day()
-
-
-    #chiamare funzione qui.
-
-    #deve finire qui? break or continue? not sure at the moment
-   # task_detail = input(str('What is your task?\n'))  
-   # print('Adding this task in your Agenda\n')
-
-    #funzione per inserire dati nel file!
-
+        print('Not a correct option\n')
+    save_edit()    
     
-  
-    
+
+def continue_or_exit():
+    """
+    Check if the user would like to continue the program, or exit it
+    """
+    continue_exit = input(str('Select C to continue, or E to exit the Agenda').upper())
+    if continue_exit == 'C':
+        print("Let's add one more task then.\n")
+        task_info()
+    elif continue_exit == 'E':
+        print('Exiting...')
+        time.sleep(1)
+        print('Program terminated. Have a great day!')  
+        # add function to exit the program  
+    else:
+        print('Incorrect option. Try again.')
+        continue_or_exit()    # is this going to work? check!        
+   
+save_edit()
 
 #add_task(day, task_detail)
 
 
 
-write_task()
+
 
 
 def create_file():
@@ -79,4 +87,3 @@ def add_task(day, task_detail):
     daysList[day - 1].append(new_pos_task, task_detail)
 
 
-#def edit_task_in_file() #rimuovere or edit?
