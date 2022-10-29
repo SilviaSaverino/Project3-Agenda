@@ -28,7 +28,7 @@ def show_calendar():
 # for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
 
-#Below some time of the day options for the user
+# Below some time of the day options for the user
 MORNING = 'anytime from 7:00 to 12:00\n'
 AFTERNOON = 'anytime from 12:00 to 18:00\n'
 EVENING = 'anytime from 18:00 to 23:00\n'
@@ -127,16 +127,21 @@ def time_of_the_day():
     time = str(input('Any particular time of the day?\n').upper())
     if time == 'MORNING':
         print('You should do this between', MORNING)
+        # Note to self: function here
     elif time == 'AFTERNOON':
         print('You should do this between', AFTERNOON)
+        # Note to self: function here
     elif time == 'EVENING':
         print('You should do this between', EVENING)
+        # Note to self: function here
     elif time == 'NIGHT':
         print('At night?', NIGHT)
+        # Not tasks will be done at night, this function will run again
+        time_of_the_day()
     else:
         print('When again? Morning, afternoon, evening or night?\n')
-        time_of_the_day()  # not sure why this doesn't run...
-
+        # When the answer is not correct, this function will run again
+        time_of_the_day() 
 
 weekly_agenda()  
 
