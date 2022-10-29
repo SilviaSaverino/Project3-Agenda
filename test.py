@@ -4,10 +4,10 @@
 print('CIAO')
 daysList = [[] for x in range(31)]
 
-MORNING = 'From 7:00 to 12:00'
-AFTERNOON = 'From 12:00 to 18:00'
-EVENING = 'From 18:00 to 23:00'
-NIGHT = 'You deserve some sleep! Select a different time of the day.'
+MORNING = 'anytime from 7:00 to 12:00\n'
+AFTERNOON = 'anytime from 12:00 to 18:00\n'
+EVENING = 'anytime from 18:00 to 23:00\n'
+NIGHT = 'You deserve some sleep! Select a different time of the day.\n'
 
 
 def write_task():
@@ -18,25 +18,33 @@ def write_task():
         print(f'Sadly {day} is not a valid option:\n')
         write_task()
         time.sleep(1)
-    #tutto quello sotto deve andare in una funzione mi sa.
-    time = str(input('Any particular time of the day?\n'))
-    if time == MORNING:
-        print('You should do this between' + MORNING)
-    elif time == AFTERNOON:
+    time_of_the_day()
+
+
+def time_of_the_day():
+    """
+    Ask the user if she/he would like to perform her/his task during
+    the morning, afternoon, evening or at night.
+    """   
+    time = str(input('Any particular time of the day?\n').upper())
+    if time == 'MORNING':
+        print('You should do this between', MORNING)
+    elif time == 'AFTERNOON':
         print('You should do this between', AFTERNOON)
-    elif time == EVENING:
+    elif time == 'EVENING':
         print('You should do this between', EVENING)
-    elif time == NIGHT:
-        print('You should do this between', NIGHT)
+    elif time == 'NIGHT':
+        print('At night?', NIGHT)
     else:
-        print('When again?')
+        print('When again? Morning, afternoon, evening or night?\n')
+    time_of_the_day()
 
 
     #chiamare funzione qui.
 
     #deve finire qui? break or continue? not sure at the moment
-    task_detail = input(str('What is your task?\n'))  
-    print('Adding this task in your Agenda\n')
+   # task_detail = input(str('What is your task?\n'))  
+   # print('Adding this task in your Agenda\n')
 
     #funzione per inserire dati nel file!
 

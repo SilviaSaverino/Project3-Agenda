@@ -28,6 +28,11 @@ def show_calendar():
 # for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
 
+#Below some time of the day options for the user
+MORNING = 'anytime from 7:00 to 12:00\n'
+AFTERNOON = 'anytime from 12:00 to 18:00\n'
+EVENING = 'anytime from 18:00 to 23:00\n'
+NIGHT = 'You deserve some sleep! Select a different time of the day.\n'
 
 def add_task(day, task_detail):
     """
@@ -110,6 +115,7 @@ def add_event():
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
         # When the answer is not correct, the program will start again
         check_week()         
+
 
 def write_task():
     """
