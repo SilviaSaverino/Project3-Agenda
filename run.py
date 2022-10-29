@@ -72,7 +72,7 @@ def check_week():
     """
     Check if the user wants to check his/her agenda and runs 
     functions accordingly to Y or N choice.
-    Runs only if the user select option 1.
+    Runs when the user select option 1.
     """
     correct = input('Check your agenda, correct? Y/N \n').upper() 
     if correct == 'Y':
@@ -93,7 +93,7 @@ def add_event():
     """
     Check if the user wants to add a task in his/her agenda and runs 
     functions accordingly to Y or N choice.
-    Runs only if the user select option 2.
+    Runs when the user select option 2.
     """
     add = input('Add an event in your agenda, correct? Y/N \n').upper() 
     if add == 'Y':
@@ -111,6 +111,18 @@ def add_event():
         # When the answer is not correct, the program will start again
         check_week()         
 
+def write_task():
+    """
+    Let the user choose a day of the calendar, and a time 
+    of the day when is more likely she/he could do such task.
+    """
+    day = int(input('Choose a day of the month:\n'))
+    if day in range(len(daysList)):
+        print(f'{day} sounds like a good day!\n') 
+    else:
+        print(f'Sadly {day} is not a valid option:\n')
+        write_task()
+        time.sleep(1)
 
 weekly_agenda()  
 
