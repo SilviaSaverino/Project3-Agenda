@@ -34,26 +34,13 @@ AFTERNOON = 'anytime from 12:00 to 18:00\n'
 EVENING = 'anytime from 18:00 to 23:00\n'
 NIGHT = 'You deserve some sleep! Select a different time of the day.\n'
 
+
 def add_task(day, task_detail):
     """
     Runs through the daysList lists and assigns the task to the selected day
     """
     new_pos_task = len(daysList[day - 1])
     daysList[day - 1].append(new_pos_task, task_detail)
-
-
-def write_task():
-    """
-    Ask the user to select a day and what it has to note down for that day.
-    """
-    day = int(input('Choose a day of the month:\n'))
-    if day in range(len(daysList)):
-        print(f'{day} sounds like a good day!\n') 
-    else:
-        print(f'Sadly {day} is not a valid option:\n')
-        write_task()
-        time.sleep(1)
-    add_task(day, task_detail)
 
 
 def weekly_agenda():
@@ -82,7 +69,7 @@ def check_week():
     correct = input('Check your agenda, correct? Y/N \n').upper() 
     if correct == 'Y':
         print('Thank you. Loading agenda...')
-        time.sleep(2)
+        time.sleep(1.5)
         # add function to open the agenda here
         print('YES function \n')
     elif correct == 'N':
@@ -103,9 +90,9 @@ def add_event():
     add = input('Add an event in your agenda, correct? Y/N \n').upper() 
     if add == 'Y':
         print('Thank you. Loading agenda...\n')
-        time.sleep(2)
+        time.sleep(1.5)
         show_calendar()
-        time.sleep(1)
+        time.sleep(0.5)
         write_task()
         
     elif add == 'N':
@@ -119,8 +106,7 @@ def add_event():
 
 def write_task():
     """
-    Let the user choose a day of the calendar, and a time 
-    of the day when is more likely she/he could do such task.
+    Ask the user to select a day and what it has to note down for that day.
     """
     day = int(input('Choose a day of the month:\n'))
     if day in range(len(daysList)):
@@ -130,6 +116,7 @@ def write_task():
         print(f'Sadly {day} is not a valid option:\n')
         write_task()
         time.sleep(1)
+    add_task(day, task_detail)
 
 
 def time_of_the_day():
@@ -148,7 +135,8 @@ def time_of_the_day():
         print('At night?', NIGHT)
     else:
         print('When again? Morning, afternoon, evening or night?\n')
-        time_of_the_day() #not sure why this doesn't run...
+        time_of_the_day()  # not sure why this doesn't run...
+
 
 weekly_agenda()  
 
