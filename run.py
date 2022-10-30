@@ -19,10 +19,10 @@ now = datetime.datetime.now()
 daysList = [[] for x in range(31)]
 
 # Below some time of the day options for the user to chose from
-MORNING = 'anytime from 7:00 to 12:00\n'
-AFTERNOON = 'anytime from 12:00 to 18:00\n'
-EVENING = 'anytime from 18:00 to 23:00\n'
-NIGHT = 'You deserve some sleep! Select a different time of the day.\n'
+MORNING = 'anytime from 7:00 to 12:00 '
+AFTERNOON = 'anytime from 12:00 to 18:00 '
+EVENING = 'anytime from 18:00 to 23:00 '
+NIGHT = 'You deserve some sleep! Select a different time of the day.'
 
 ###
 # Functions
@@ -127,8 +127,10 @@ def save_task(day, day_span, task_detail):
         if saving == 'Y':
             print('Cool. Saving your task')
             time.sleep(1)
-            daysList[day - 1].append(day_span + ' - ' + task_detail)
+            daysList[day - 1].append(day_span+'your task is to: '+task_detail)
             print('All done. Task saved.')
+            print(daysList)
+
             return
         if saving == 'N':
             print('Okay then. Have a great day')

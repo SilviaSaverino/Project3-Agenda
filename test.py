@@ -1,74 +1,47 @@
 #File created to write block of code singularly and test them, before adding them into the run.py file. 
 #To be deleted before submitting the project.abs
-
-print('CIAO')
 daysList = [[] for x in range(31)]
+ 
 
-def write_task():
+list_length = 3
+
+task = input('time?')
+day = input('when?')
+cosa = input('prova')
+
+for idx in range(list_length):
+    item = [task, day, cosa]
+    daysList.append(item)
+
+def check_week():
     """
-    Ask the user to select a day and what it has to note down for that day.
+    Check if the user wants to check his/her agenda and runs 
+    functions accordingly to Y or N choice.
+    Runs when the user select option 1.
     """
-    day = int(input('Choose a day of the month:\n'))
-    if day in range(len(daysList)):
-        print(f'{day} sounds like a good day!\n')
-        time_of_the_day() 
-    else:
-        print(f'Sadly {day} is not a valid option:\n')
-        write_task()
-        time.sleep(1)
-    add_task(day, task_detail)
+    while True:
+        correct = input('Check your agenda, correct? Y/N \n').upper() 
+        daysList.append(correct)
+        if correct == 'Y':
+            print('Thank you. Loading agenda...')
+            #time.sleep(1.5)
+            # add function to open the agenda here
+            print('YES function \n')
+            return
+        elif correct == 'N':
+            print('Sure, select a different option \n')
+            return
+        else:
+            print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
+            # When the answer is not correct, the program will start again
 
-# funzione per sapere di quale task si tratta. 
-    
-       
-
-task_info()
-
-
-def continue_or_exit():
-    """
-    Check if the user would like to continue the program, or exit it
-    """
-    print('Would you like to continue or exit the Agenda?\n')
-    continue_exit = input(str('Select C to continue, or E to exit the Agenda')).upper()
-    if continue_exit == 'C':
-        print("Let's add one more task then.\n")
-        task_info()
-    elif continue_exit == 'E':
-        print('Exiting...')
-        time.sleep(1)
-        print('Program terminated. Have a great day!')  
-        # add function to exit the program  
-    else:
-        print('Incorrect option. Try again.')
-        continue_or_exit()    # is this going to work? check!        
-   
-def save_edit():
-    """
-    Check if the user would like to save the task in the
-    file.csv and continue accordingly to the user choice.
-    """   
-    saving_edit = input(str('Select S for saving, or M to Modify task\n')).upper()
-    if saving_edit == 'S':
-        print('Great! Saving task...\n')
-        time.sleep(1)
-        add_task(day, task_detail)
-        print('Saved. Would you like to continue or exit?\n')
-        continue_or_exit()
-    elif saving_edit == 'M':
-        print('Sure, what would you like to change?\n')
-        # another function here.
-    else:
-        print('Not a correct option\n')
-    save_edit() 
-
-#add_task(day, task_detail)
+check_week()
 
 
 
+print(daysList) 
 
-
-
+'''
 def create_file():
     """
     Create a file.csv with the days in the months as header
@@ -87,5 +60,5 @@ def add_task(day, task_detail):
     """
     new_pos_task = len(daysList[day - 1])
     daysList[day - 1].append(new_pos_task, task_detail)
-
+'''
 

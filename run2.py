@@ -79,6 +79,7 @@ def request_day():
     show_calendar()
     while True:
         day = int(input('Choose a day of the month:\n'))
+        daysList.append(day)
         if day in range(len(daysList)):
             print(f'{day} sounds like a good day!\n')
             return day 
@@ -93,6 +94,7 @@ def request_time():
     """
     while True:
         time = str(input('Any particular time of the day?\n').upper())
+        daysList.append(time)
         if time == 'MORNING':
             print('You should do this between', MORNING)
             return MORNING
@@ -114,7 +116,8 @@ def request_task():
     """
     Ask the user to write the task of the day and 
     """
-    task_detail = input(str('What is your task?\n'))  
+    task_detail = input(str('What is your task?\n')) 
+    daysList.append(task_detail) 
     print(f'Adding "{task_detail}" in your Agenda\n')
     return task_detail
             
@@ -155,7 +158,7 @@ def add_event():
             task_info = request_task()
             # saving function below
             save_task(day, day_span, task_info)
-
+            print(daysList)
             return
         elif add == 'N':
             print('Sure, select a different option \n')
