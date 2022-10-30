@@ -36,8 +36,8 @@ def weekly_agenda():
         choice = input('1-Check your Agenda.\n2-Add event.\n3-Cancel event.\n')
         if choice == '1' or choice == '2' or choice == '3':
             return choice
-        else:
-            print('Incorrect option. Your input must be a number from the list \n')
+        
+        print('Incorrect option. Your input must be a number from the list \n')
 
 
 def check_week():
@@ -54,12 +54,12 @@ def check_week():
             # add function to open the agenda here
             print('YES function \n')
             return
-        elif correct == 'N':
+        if correct == 'N':
             print('Sure, select a different option \n')
             return
-        else:
-            print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
-            # When the answer is not correct, the program will start again
+        
+        print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
+        # When the answer is not correct, the program will start again
 
 
 def show_calendar():
@@ -81,8 +81,8 @@ def request_day():
         if day in range(len(daysList)):
             print(f'{day} sounds like a good day!\n')
             return day 
-        else:
-            print(f'Sadly {day} is not a valid option:\n')
+        
+        print(f'Sadly {day} is not a valid option:\n')
 
 
 def request_time():
@@ -95,18 +95,18 @@ def request_time():
         if time == 'MORNING':
             print('You should do this between', MORNING)
             return MORNING
-        elif time == 'AFTERNOON':
+        if time == 'AFTERNOON':
             print('You should do this between', AFTERNOON)
             return AFTERNOON
-        elif time == 'EVENING':
+        if time == 'EVENING':
             print('You should do this between', EVENING)
             return EVENING
-        elif time == 'NIGHT':
+        if time == 'NIGHT':
             print('At night?', NIGHT)
             # Not tasks will be done at night, this function will run again
-        else:
-            print('When again? Morning, afternoon, evening or night?\n')
-            # When the answer is not correct, this function will run again
+        
+        print('When again? Morning, afternoon, evening or night?\n')
+        # When the answer is not correct, this function will run again
 
 
 def request_task():
@@ -156,11 +156,11 @@ def add_event():
             save_task(day, day_span, task_info)
 
             return
-        elif add == 'N':
+        if add == 'N':
             print('Sure, select a different option \n')
             return
-        else:
-            print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
+        
+        print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
             # When the answer is not correct, the program will start again
 
 
