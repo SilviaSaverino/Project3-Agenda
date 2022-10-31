@@ -65,6 +65,16 @@ def check_week():
         # When the answer is not correct, the program will start again
 
 
+def read_file():
+    '''
+    Open the csv.file
+    '''
+    with open('testing.csv', 'r') as file:
+        reader = csv.reader(file)
+        print(file.read())
+        file.close()  
+
+
 def show_calendar():
     """
     Shows an actual calendar to the user, for a better user experience.
