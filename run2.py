@@ -142,6 +142,7 @@ def save_task(day, day_span, task_detail):
 
         print('Invalid option. Type Y for yes, N for no')    
 
+
 def file_creation():
     '''
     testing at the moment

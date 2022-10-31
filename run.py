@@ -116,8 +116,8 @@ def request_task():
     """
     task_detail = input(str('What is your task?\n'))  
     print(f'Adding "{task_detail}" in your Agenda\n')
-    return task_detail
-            
+    return task_detail            
+
 
 def save_task(day, day_span, task_detail):
     """
@@ -138,6 +138,16 @@ def save_task(day, day_span, task_detail):
             return
 
         print('Invalid option. Type Y for yes, N for no')    
+
+
+def file_creation():
+    '''
+    Create file csv to store user inputs
+    '''
+    with open('testing.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(firstRow)
+        writer.writerow(daysList)
 
 
 def add_event():
