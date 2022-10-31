@@ -37,7 +37,7 @@ def weekly_agenda():
     Starts the programm asking the which task will be execute
     """
     while True:
-        print('What would you like to do? Please, insert one of the following:\n')
+        print('What would you like to do? Insert one of the following:\n')
         choice = input('1-Check your Agenda.\n2-Add event.\n3-Cancel event.\n')
         if choice == '1' or choice == '2' or choice == '3':
             return choice
