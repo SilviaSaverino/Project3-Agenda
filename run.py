@@ -55,8 +55,8 @@ def check_week():
         if correct == 'Y':
             print('Thank you. Loading agenda...')
             time.sleep(1.5)
-            # add function to open the agenda here
-            print('YES function \n')
+            read_file()
+            
             return
         if correct == 'N':
             print('Sure, select a different option \n')
