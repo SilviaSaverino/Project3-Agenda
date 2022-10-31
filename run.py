@@ -17,6 +17,7 @@ now = datetime.datetime.now()
 # Creates an array of 31 days with nested arrays ; index[1] of each index[0] 
 # for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
+firstRow = ['1', '2', '3', '4']
 
 # Below some time of the day options for the user to chose from
 MORNING = 'anytime from 7:00 to 12:00 '
