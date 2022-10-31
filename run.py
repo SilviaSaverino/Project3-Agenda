@@ -9,7 +9,7 @@ import calendar
 
 import csv
 ###
-#Costants and Global variables
+# Costants and Global variables
 ###
 # from datetime
 now = datetime.datetime.now()
@@ -17,13 +17,17 @@ now = datetime.datetime.now()
 # Creates an array of 31 days with nested arrays ; index[1] of each index[0] 
 # for each of the 31 arrays,will be calling a function
 daysList = [[] for x in range(31)]
-firstRow = ['1', '2', '3', '4']
+firstRow = [
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 
+    '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
+    '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
 
 # Below some time of the day options for the user to chose from
 MORNING = 'anytime from 7:00 to 12:00 '
 AFTERNOON = 'anytime from 12:00 to 18:00 '
 EVENING = 'anytime from 18:00 to 23:00 '
 NIGHT = 'You deserve some sleep! Select a different time of the day.'
+
 
 ###
 # Functions
@@ -37,7 +41,6 @@ def weekly_agenda():
         choice = input('1-Check your Agenda.\n2-Add event.\n3-Cancel event.\n')
         if choice == '1' or choice == '2' or choice == '3':
             return choice
-        
         print('Incorrect option. Your input must be a number from the list \n')
 
 
@@ -58,7 +61,6 @@ def check_week():
         if correct == 'N':
             print('Sure, select a different option \n')
             return
-        
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
         # When the answer is not correct, the program will start again
 
@@ -82,7 +84,6 @@ def request_day():
         if day in range(len(daysList)):
             print(f'{day} sounds like a good day!\n')
             return day 
-        
         print(f'Sadly {day} is not a valid option:\n')
 
 
@@ -105,7 +106,6 @@ def request_time():
         if time == 'NIGHT':
             print('At night?', NIGHT)
             # Not tasks will be done at night, this function will run again
-        
         print('When again? Morning, afternoon, evening or night?\n')
         # When the answer is not correct, this function will run again
 
@@ -162,9 +162,8 @@ def add_event():
         if add == 'N':
             print('Sure, select a different option \n')
             return
-        
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
-            # When the answer is not correct, the program will start again
+        # When the answer is not correct, the program will start again
 
 
 ###
@@ -180,10 +179,8 @@ while True:
     if (oper_selected == '1'):
         check_week()
     elif (oper_selected == '2'):
-        add_event()
-        
+        add_event()    
     elif (oper_selected == '3'):
         print('hola')
         break
         # insert function here
-  
