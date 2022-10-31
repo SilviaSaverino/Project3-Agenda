@@ -167,6 +167,7 @@ def add_event():
             task_info = request_task()
             # saving function below
             save_task(day, day_span, task_info)
+            file_creation()
 
             return
         if add == 'N':
