@@ -75,6 +75,24 @@ def read_file():
         file.close()  
 
 
+def exit_program():
+    '''
+    Exit the program if the user would like to do so.
+    '''
+    print('Loading complete.\n')
+    exiting = str(input('Would you like to exit the Agenda? Y/N\n')).upper()
+    while True:
+        if exiting == 'Y':
+            print('Closing the Agenda...\n')
+            time.sleep(1)
+            print('Agenda closed. Bye!')
+            exit()
+        if exiting == 'N':
+            weekly_agenda()     ############################# ASK SPENCER! the code once here doesn't run! ##################
+        print('Incorrect option\n')
+        return ####### my brain! this is restarting eveything! I want to restart this function only! #########
+
+
 def show_calendar():
     """
     Shows an actual calendar to the user, for a better user experience.
