@@ -66,3 +66,22 @@ I’ve found that the free version of tools offered once creating an account, wa
 Kindly, find below the flow chart followed to create this program.
 
 ![Lucid Chart flow diagram image](/assets/images/lucid_chart.png)
+
+
+## Explain Logic in Flow Chart
+
+The user will be welcomed in the Agenda program, and promptly informed with the date and time of the day.
+
+Three options will be presented to the user: 
+- 1) Check agenda
+- 2) Add Event
+- 3) Exit Agenda
+
+Should the user select options number 1 - Check Agenda, the program will simply print the current agenda file on the terminal, and ask the user if she/he would like to exit the program. 
+With a positive answer the program will update the user with the exiting progress and shut down the program with some greetings of sorts.
+With a negative answer the program will check what else the user would like to do, and show he/she the three initial options again.
+
+Should the user select option 2 - Add event, the program will show the user a mini calendar - in this version showing the month of Jan 2023 - the program will then ask the user to select a day from the calendar. If a correct option is not selected, the program will prompt the user with an answer to keep on running. If a correct option is given, then the program will ask for a time of the day when the user is more likely to perform such task/event. Once again the program will check if a valid option is given or not. If not, once again will prompt the user with a valid answer; if yes, the program will ask for the task information.
+Once the user provide such information, the program will print it back and check if the user would like to save such a task or now. If not, the program will check if the user would like to exit the program; if yes the program will update the user with the saving progress and once done will check if the user would like to exit.
+
+Should the user select option 3 - Exit Agenda, the program will double check if the user would like to exit, and if so it will update the user with the exiting progress until the program shut down and greet the user; if instead the user would like not to exit, the program will present the user with the three initial options, to check what else she/he would like to do. 
