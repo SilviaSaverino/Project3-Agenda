@@ -1,4 +1,4 @@
-import pickle  # Allows to save your data once you've done using this program
+#import pickle  # Allows to save your data once you've done using this program
 
 import datetime  # Get and allows to display actual date and time
 
@@ -57,7 +57,7 @@ firstRow = [
 MORNING = "anytime from 7:00 to 12:00 "
 AFTERNOON = "anytime from 12:00 to 18:00 "
 EVENING = "anytime from 18:00 to 23:00 "
-NIGHT = "You deserve some sleep! Select a different time of the day."
+NIGHT = "You deserve some sleep! Select a different time of the day.\n"
 
 
 ###
@@ -99,7 +99,7 @@ def read_file():
     """
     Open the csv.file
     """
-    with open("testing.csv", "r") as file:
+    with open("Agenda.csv", "r") as file:
         csv.reader(file)
         print(file.read())
         file.close()
@@ -152,7 +152,8 @@ def request_time():
     the morning, afternoon, evening or at night.
     """
     while True:
-        time = str(input("Any particular time of the day?\n").upper())
+        print("Any particular time of the day? Select one of these options")
+        time = str(input("morning, afternoon, evening or night?\n").upper())
         if time == "MORNING":
             print("You should do this between", MORNING)
             return MORNING
@@ -164,9 +165,6 @@ def request_time():
             return EVENING
         if time == "NIGHT":
             print("At night?", NIGHT)
-            # Not tasks will be done at night, this function will run again
-        print("I didn't get that. Morning, afternoon, evening or night?\n")
-        # When the answer is not correct, this function will run again
 
 
 def request_task():
@@ -187,15 +185,13 @@ def save_task(day, day_span, task_detail):
         if saving == "Y":
             print("Cool. Saving your task")
             time.sleep(1)
-            daysList[day - 1].append(
-                day_span + "your task is to: " + task_detail
-            )
+            daysList[day - 1].append(day_span + "you should:" + task_detail)
             print("Task saved.\n")
             print('All done. Anything else? \n')
 
             return
         if saving == "N":
-            print("Okay then. Have a great day")
+            print("Okay then. Let's check again\n")
             return
 
         print("Invalid option. Type Y for yes, N for no\n")
@@ -205,7 +201,7 @@ def file_creation():
     """
     Create file csv to store user inputs
     """
-    with open("testing.csv", "w", newline="") as file:
+    with open("Agenda.csv", "w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(firstRow)
         writer.writerow(daysList)
