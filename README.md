@@ -26,6 +26,7 @@ Depending on the option selected, the program will let the user:
 
 The program will run, until the user decides to shut it down, by selecting the exit option.
 
+
 # UX
 
 ## Strategy:
@@ -44,3 +45,24 @@ The stories goals above are reached by:
 -	Let the user choose the initial task to perform once the program starts
 -	Let the user decide if the task written will be saved or not in the agenda file
 -	Displaying clear options for the user to choose from, and promptly remind or suggest the right input to select to continue the program
+
+
+# Website Design
+
+No design had been added to this version of the project. My understanding of the instruction given by Code Institute is that no graphic libraries can be used to allow deployment through Heroku.
+
+
+# Logic
+
+Prior to jumping into coding, a draft of a flow diagram was manually written down, simply to have a better idea of how the program would have run, which steps of the program would have allow the user to continue and what option chosen would have let the program start again, or perform other options accordingly.
+
+A final flow diagram, was later created and added here below to show the steps/logic followed. 
+
+I’ve created the below diagram through [Lucid Chart](https://www.lucidchart.com/pages/) website 
+
+
+I’ve found that the free version of tools offered once creating an account, was good enough for this purpose. 
+
+Kindly, find below the flow chart followed to create this program.
+
+![Lucid Chart flow diagram image](/assets/images/lucid_chart.png)
