@@ -93,7 +93,6 @@ def check_week():
             print("Sure, select a different option \n")
             return
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')
-        # When the answer is not correct, the program will start again
 
 
 def read_file():
@@ -120,7 +119,6 @@ def exit_program():
         if exiting == "N":
             print("Okay, let's do something else.\n")
             return
-            
         print("Incorrect option, please type Y/N\n")
         exiting = str(input("Exit the Agenda? Y/N\n")).upper()
         continue
@@ -228,16 +226,13 @@ def add_event():
             time.sleep(0.5)
             day_span = request_time()
             task_info = request_task()
-            # saving function below
             save_task(day, day_span, task_info)
             file_creation()
-            
             return
         if add == "N":
             print("Sure, select a different option \n")
             return
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')
-        # When the answer is not correct, the program will start again
 
 
 ###
