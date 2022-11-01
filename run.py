@@ -1,22 +1,24 @@
-# Allows to save your data once you've done using this programm
-import pickle
-# Get and allows to display actual date and time
-import datetime
-# Allows to set a time interval of x seconds between operations and 
-# calendar will show a standard calendar
-import time
-import calendar
+import pickle  # Allows to save your data once you've done using this programm
+
+import datetime  # Get and allows to display actual date and time
+
+import time  # Allows to set a time interval of x sec between operations
+
+import calendar  # calendar will show a standard calendar
 
 import csv
+
+
 ###
 # Costants and Global variables
 ###
-# from datetime
-now = datetime.datetime.now()
 
-# Creates an array of 31 days with nested arrays ; index[1] of each index[0] 
-# for each of the 31 arrays,will be calling a function
+now = datetime.datetime.now()  # from datetime
+
+# Creates an array of 31 days with nested arrays ; index[1] of each index[0]
+# for each of the 31 arrays,will be add an event underneath
 daysList = [[] for x in range(31)]
+
 firstRow = [
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 
     '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
@@ -34,11 +36,11 @@ NIGHT = 'You deserve some sleep! Select a different time of the day.'
 ###
 def weekly_agenda():
     """
-    Starts the programm asking the which task will be execute
+    Starts the programm asking the user which task will be execute
     """
     while True:
         print('What would you like to do? Insert one of the following:\n')
-        choice = input('1-Check your Agenda.\n2-Add event.\n3-Cancel event.\n')
+        choice = input('1-Check your Agenda\n2-Add event\n3-Exit Agenda\n')
         if choice == '1' or choice == '2' or choice == '3':
             return choice
         print('Incorrect option. Your input must be a number from the list \n')
@@ -46,22 +48,22 @@ def weekly_agenda():
 
 def check_week():
     """
-    Check if the user wants to check his/her agenda and runs 
+    Check if the user wants to check his/her agenda and runs
     functions accordingly to Y or N choice.
-    Runs when the user select option 1.
     """
     while True:
-        correct = input('Check your agenda, correct? Y/N \n').upper() 
+        correct = input('Check your agenda, correct? Y/N \n').upper()
         if correct == 'Y':
             print('Thank you. Loading agenda...')
             time.sleep(1.5)
+            print('Loading complete.\n')
             read_file()
             exit_program()
             #return
         if correct == 'N':
             print('Sure, select a different option \n')
             return
-        print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
+        print('Incorrect option. Input "Y" for yes, or "N" for no \n')
         # When the answer is not correct, the program will start again
 
 
@@ -72,14 +74,13 @@ def read_file():
     with open('testing.csv', 'r') as file:
         reader = csv.reader(file)
         print(file.read())
-        file.close()  
+        file.close()
 
 
 def exit_program():
     '''
     Exit the program if the user would like to do so.
     '''
-    print('Loading complete.\n')
     exiting = str(input('Would you like to exit the Agenda? Y/N\n')).upper()
     while True:
         if exiting == 'Y':
@@ -88,9 +89,11 @@ def exit_program():
             print('Agenda closed. Bye!')
             exit()
         if exiting == 'N':
-            weekly_agenda()     ############################# ASK SPENCER! the code once here doesn't run! ##################
+            print("Okay, let's do something else.\n")
+            weekly_agenda()
+                ############################# ASK SPENCER! the code once here doesn't run! ##################
         print('Incorrect option\n')
-        return ####### my brain! this is restarting eveything! I want to restart this function only! #########
+        #return ####### my brain! this is restarting eveything! I want to restart this function only! #########
 
 
 def show_calendar():
@@ -98,7 +101,7 @@ def show_calendar():
     Shows an actual calendar to the user, for a better user experience.
     """
     c = calendar.TextCalendar(calendar.MONDAY)
-    future_date = c.formatmonth(2023, 1)
+    future_date = c.formatmonth(2023, 1)  # The month displayed is Jan 2023
     print('Calendar', future_date)
 
 
@@ -134,17 +137,17 @@ def request_time():
         if time == 'NIGHT':
             print('At night?', NIGHT)
             # Not tasks will be done at night, this function will run again
-        print('When again? Morning, afternoon, evening or night?\n')
+        print("I didn't get that. Morning, afternoon, evening or night?\n")
         # When the answer is not correct, this function will run again
 
 
 def request_task():
     """
-    Ask the user to write the task of the day and 
+    Ask the user to write the task of the day and
     """
-    task_detail = input(str('What is your task?\n'))  
+    task_detail = input(str('What is your task?\n'))
     print(f'Adding "{task_detail}" in your Agenda\n')
-    return task_detail            
+    return task_detail
 
 
 def save_task(day, day_span, task_detail):
@@ -165,7 +168,7 @@ def save_task(day, day_span, task_detail):
             print('Okay then. Have a great day')
             return
 
-        print('Invalid option. Type Y for yes, N for no')    
+        print('Invalid option. Type Y for yes, N for no')
 
 
 def file_creation():
@@ -180,12 +183,12 @@ def file_creation():
 
 def add_event():
     """
-    Check if the user wants to add a task in his/her agenda and runs 
-    functions accordingly to Y or N choice.
+    Check if the user wants to add a task in his/her agenda and runs
+    accordingly to Y or N choice.
     Runs when the user select option 2.
     """
     while True:
-        add = input('Add an event in your agenda, correct? Y/N \n').upper() 
+        add = input('Add an event in your agenda, correct? Y/N \n').upper()
         if add == 'Y':
             print('Thank you. Loading agenda...\n')
             time.sleep(1.5)
@@ -201,7 +204,7 @@ def add_event():
         if add == 'N':
             print('Sure, select a different option \n')
             return
-        print('Incorrect option. Input "Y" for yes, or "N" for no \n')    
+        print('Incorrect option. Input "Y" for yes, or "N" for no \n')
         # When the answer is not correct, the program will start again
 
 
@@ -211,15 +214,13 @@ def add_event():
 print("Welcome to your Agenda\n")
 print(now.strftime("Today is %A, %Y-%m-%d %H:%M \n"))
 
-while True:
+while True:          ################# should I put this into a function? ############################################
     # Ask for an operation
     oper_selected = weekly_agenda()
 
-    if (oper_selected == '1'):
+    if oper_selected == '1':
         check_week()
-    elif (oper_selected == '2'):
-        add_event()    
-    elif (oper_selected == '3'):
-        print('hola')
-        break
-        # insert function here
+    if oper_selected == '2':
+        add_event()
+    if oper_selected == '3':
+        exit_program()
