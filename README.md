@@ -69,7 +69,7 @@ Kindly, find below the flow chart followed to create this program.
 ![Lucid Chart flow diagram image](/assets/images/lucid_chart.png)
 
 
-## Explain Logic in Flow Chart
+# Logic in Flow Chart explanation
 
 The user will be welcomed in the Agenda program, and promptly informed with the date and time of the day.
 
@@ -88,7 +88,7 @@ Once the user provide such information, the program will print it back and check
 Should the user select option 3 - Exit Agenda, the program will double check if the user would like to exit, and if so it will update the user with the exiting progress until the program shut down and greet the user; if instead the user would like not to exit, the program will present the user with the three initial options, to check what else she/he would like to do. 
 
 
-## Existing Features
+# Existing Features
 
 In this release of Agenda, the program is on its simplest version.
 
@@ -120,10 +120,108 @@ Here the user will be asked to choose a day of the month
 
 ![screenshot of message asking to pick a day of the month](/assets/images/choosing_day.png)
 
+
 If the day is not within any date in the calendar, once again the program will prompt the user to select a valid option.
 
 ![screenshot of not valid date message](/assets/images/wrong_day.png)
 
+
 If instead, the day of the month chosen by the user was a valid one, the program will repeat it back and continue with asking for a particular time of that day.
 
-![screenshot of valid date selected message and time of the day question](/assets/images/repeat_chosen_day.png)
+![screenshot of valid date selected message and time of the day question](/assets/images/time_of_day.png)
+
+
+A different message will be displayed to the user accordingly to his/her choice.
+
+Morning message:
+
+![screenshot of morning choice message](/assets/images/morning.png)
+
+Afternoon message:
+
+![screenshot of afternoon choice message](/assets/images/afternoon.png)
+
+Evening message:
+
+![screenshot of evening choice message](/assets/images/evening.png)
+
+Night message:
+
+![screenshot of night choice message](/assets/images/night.png)
+
+
+Should the user write something else by mistake or intentionally, once again the program will ask to select one of the options listed.
+
+![screenshot of invalid choice message](/assets/images/invalid_time_day.png)
+
+
+Finally, the program will ask for the task info and it will show it back to the user once done writing
+
+![screenshot of task info question](/assets/images/task_info.png)
+
+
+A following option will ask the user if the task has to be saved
+
+![screenshot of saving question](/assets/images/save_the_task.png)
+
+
+If a negative answer will be given, then the program will check again what the user would like to do, and restart.
+
+![screenshot of negative saving answer message](/assets/images/neg_saving.png)
+
+
+If instead the user would like to indeed save the task, following messages will update the user of the saving progress.
+
+![screenshot of saving progress message](/assets/images/saving_task.png)
+
+
+
+
+Finally, the program will check if the user would like to do anything else. And it restarts again.
+
+![screenshot of 'anything else' message](/assets/images/all_done_message.png)
+
+
+Should the user select option 1 - Check your agenda , once again the program will make sure this option choice was intentional
+
+![screenshot of selected option 1 message](/assets/images/option1_confirmation.png)
+
+
+Once again it will check for the right input
+
+![screenshot of valid input option 1 message](/assets/images/invalid_option1.png)
+
+
+If the selection of option 1 or if the user has changed hit/her mind, and doesn't want check the agenda afterall, the program will display a message and once again the three initial options to choose from
+
+![screenshot of different option to choose from](/assets/images/negative_option1.png)
+
+
+If instead the user would really like to check the agenda,the loading progress will be displayed to inform the user of its progress and finally the agenda will get printed in the terminal. The task will be displayed underneath the right chosen day of the month - This is better shown in a csv file opened with Windows Excel, rather that in the terminal.
+
+![screenshot of the agenda printed on the terminal](/assets/images/view_agenda.png)
+
+
+In the example above the user originally selected day 2 from the calendar, so the task 'send email to Ellie' has been written on index[1] of the list... and so on.
+
+Once again the program will inform the user that everything she/he asked has been done, and check again if is there anything else to be done - here once again the three options will be displayed.
+
+Finally, should the user select option 3 - Exit Agenda , the program will check if this option is the correct one selected and if indeed the user would like to exit.
+
+![screenshot of verification message for option 3](/assets/images/option3_verification.png)
+
+
+Also here for any invalid options a message will be shown to the user, and the question will be fired again.
+![screenshot of invalid option for option3](/assets/images/invalid.png)
+
+
+
+If option 3 is not what the user would like to do, the program will aknowledge this and present the user with the three first options
+
+![screenshot of negative exit option chosen](/assets/images/negative_exit.png)
+
+
+
+If this was the intention of the user, some exiting progress messages will be displayed and the Agenda program will shut down, after a polite 'Bye' message.
+
+![screenshot of exiting progress](/assets/images/exit_complete.png)

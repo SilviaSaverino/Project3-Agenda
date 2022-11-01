@@ -81,9 +81,10 @@ def check_week():
     while True:
         correct = input("Check your agenda, correct? Y/N \n").upper()
         if correct == "Y":
-            print("Thank you. Loading agenda...")
+            print("Thank you. Loading agenda...\n")
             time.sleep(1.5)
             print("Loading complete.\n")
+            time.sleep(1)
             read_file()
             print('All done. Anything else?\n')
             return
