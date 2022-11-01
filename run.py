@@ -1,4 +1,4 @@
-import pickle  # Allows to save your data once you've done using this programm
+import pickle  # Allows to save your data once you've done using this program
 
 import datetime  # Get and allows to display actual date and time
 
@@ -20,15 +20,44 @@ now = datetime.datetime.now()  # from datetime
 daysList = [[] for x in range(31)]
 
 firstRow = [
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
-    '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
-    '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+]
 
 # Below some time of the day options for the user to chose from
-MORNING = 'anytime from 7:00 to 12:00 '
-AFTERNOON = 'anytime from 12:00 to 18:00 '
-EVENING = 'anytime from 18:00 to 23:00 '
-NIGHT = 'You deserve some sleep! Select a different time of the day.'
+MORNING = "anytime from 7:00 to 12:00 "
+AFTERNOON = "anytime from 12:00 to 18:00 "
+EVENING = "anytime from 18:00 to 23:00 "
+NIGHT = "You deserve some sleep! Select a different time of the day."
 
 
 ###
@@ -39,11 +68,11 @@ def weekly_agenda():
     Starts the programm asking the user which task will be execute
     """
     while True:
-        print('What would you like to do? Insert one of the following:\n')
-        choice = input('1-Check your Agenda\n2-Add event\n3-Exit Agenda\n')
-        if choice == '1' or choice == '2' or choice == '3':
+        print("What would you like to do? Insert one of the following:\n")
+        choice = input("1-Check your Agenda\n2-Add event\n3-Exit Agenda\n")
+        if choice == "1" or choice == "2" or choice == "3":
             return choice
-        print('Incorrect option. Your input must be a number from the list \n')
+        print("Incorrect option. Your input must be a number from the list \n")
 
 
 def check_week():
@@ -52,48 +81,48 @@ def check_week():
     functions accordingly to Y or N choice.
     """
     while True:
-        correct = input('Check your agenda, correct? Y/N \n').upper()
-        if correct == 'Y':
-            print('Thank you. Loading agenda...')
+        correct = input("Check your agenda, correct? Y/N \n").upper()
+        if correct == "Y":
+            print("Thank you. Loading agenda...")
             time.sleep(1.5)
-            print('Loading complete.\n')
+            print("Loading complete.\n")
             read_file()
             exit_program()
             # return
-        if correct == 'N':
-            print('Sure, select a different option \n')
+        if correct == "N":
+            print("Sure, select a different option \n")
             return
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')
         # When the answer is not correct, the program will start again
 
 
 def read_file():
-    '''
+    """
     Open the csv.file
-    '''
-    with open('testing.csv', 'r') as file:  # Not sure about this errors here ###########################
-        reader = csv.reader(file)
+    """
+    with open("testing.csv", "r") as file:
+        csv.reader(file)
         print(file.read())
         file.close()
 
 
 def exit_program():
-    '''
+    """
     Exit the program if the user would like to do so.
-    '''
-    exiting = str(input('Would you like to exit the Agenda? Y/N\n')).upper()
+    """
+    exiting = str(input("Would you like to exit the Agenda? Y/N\n")).upper()
     while True:
-        if exiting == 'Y':
-            print('Closing the Agenda...\n')
+        if exiting == "Y":
+            print("Closing the Agenda...\n")
             time.sleep(1)
-            print('Agenda closed. Bye!')
+            print("Agenda closed. Bye!")
             exit()
-        if exiting == 'N':
+        if exiting == "N":
             print("Okay, let's do something else.\n")
-            weekly_agenda()
-                ############################# ASK SPENCER! the code once here doesn't run! ##################
-        print('Incorrect option\n')
-        #return ####### my brain! this is restarting eveything! I want to restart this function only! #########
+            return
+        print("Incorrect option, please type Y/N\n")
+        exiting = str(input("Would you like to exit the Agenda? Y/N\n")).upper()
+        continue
 
 
 def show_calendar():
@@ -102,7 +131,7 @@ def show_calendar():
     """
     c = calendar.TextCalendar(calendar.MONDAY)
     future_date = c.formatmonth(2023, 1)  # The month displayed is Jan 2023
-    print('Calendar', future_date)
+    print("Calendar", future_date)
 
 
 def request_day():
@@ -111,11 +140,11 @@ def request_day():
     """
     show_calendar()
     while True:
-        day = int(input('Choose a day of the month:\n'))
+        day = int(input("Choose a day of the month:\n"))
         if day in range(len(daysList)):
-            print(f'{day} sounds like a good day!\n')
+            print(f"{day} sounds like a good day!\n")
             return day
-        print(f'Sadly {day} is not a valid option:\n')
+        print(f"Sadly {day} is not a valid option:\n")
 
 
 def request_time():
@@ -123,19 +152,21 @@ def request_time():
     Ask the user if she/he would like to perform her/his task during
     the morning, afternoon, evening or at night.
     """
-    while True:  # here below is giving me one more yellow error #########################################
-        time = str(input('Any particular time of the day?\n').upper())
-        if time == 'MORNING':
-            print('You should do this between', MORNING)
+    while (
+        True
+    ):  # here below is giving me one more yellow error #########################################
+        time = str(input("Any particular time of the day?\n").upper())
+        if time == "MORNING":
+            print("You should do this between", MORNING)
             return MORNING
-        if time == 'AFTERNOON':
-            print('You should do this between', AFTERNOON)
+        if time == "AFTERNOON":
+            print("You should do this between", AFTERNOON)
             return AFTERNOON
-        if time == 'EVENING':
-            print('You should do this between', EVENING)
+        if time == "EVENING":
+            print("You should do this between", EVENING)
             return EVENING
-        if time == 'NIGHT':
-            print('At night?', NIGHT)
+        if time == "NIGHT":
+            print("At night?", NIGHT)
             # Not tasks will be done at night, this function will run again
         print("I didn't get that. Morning, afternoon, evening or night?\n")
         # When the answer is not correct, this function will run again
@@ -145,7 +176,7 @@ def request_task():
     """
     Ask the user to write the task of the day and
     """
-    task_detail = input(str('What is your task?\n'))
+    task_detail = input(str("What is your task?\n"))
     print(f'Adding "{task_detail}" in your Agenda\n')
     return task_detail
 
@@ -155,27 +186,29 @@ def save_task(day, day_span, task_detail):
     Save task under the right day/header.
     """
     while True:
-        saving = input(str('Would you like to save this task? Y/N \n')).upper()
-        if saving == 'Y':
-            print('Cool. Saving your task')
+        saving = input(str("Would you like to save this task? Y/N \n")).upper()
+        if saving == "Y":
+            print("Cool. Saving your task")
             time.sleep(1)
-            daysList[day - 1].append(day_span+'your task is to: '+task_detail)
-            print('All done. Task saved.')
+            daysList[day - 1].append(
+                day_span + "your task is to: " + task_detail
+            )
+            print("All done. Task saved.")
             print(daysList)
 
             return
-        if saving == 'N':
-            print('Okay then. Have a great day')
+        if saving == "N":
+            print("Okay then. Have a great day")
             return
 
-        print('Invalid option. Type Y for yes, N for no')
+        print("Invalid option. Type Y for yes, N for no")
 
 
 def file_creation():
-    '''
+    """
     Create file csv to store user inputs
-    '''
-    with open('testing.csv', 'w', newline='') as file:  ############################one more yellow##################
+    """
+    with open("testing.csv", "w", newline="") as file:  
         writer = csv.writer(file)
         writer.writerow(firstRow)
         writer.writerow(daysList)
@@ -188,9 +221,9 @@ def add_event():
     Runs when the user select option 2.
     """
     while True:
-        add = input('Add an event in your agenda, correct? Y/N \n').upper()
-        if add == 'Y':
-            print('Thank you. Loading agenda...\n')
+        add = input("Add an event in your agenda, correct? Y/N \n").upper()
+        if add == "Y":
+            print("Thank you. Loading agenda...\n")
             time.sleep(1.5)
             day = request_day()
             time.sleep(0.5)
@@ -201,8 +234,8 @@ def add_event():
             file_creation()
 
             return
-        if add == 'N':
-            print('Sure, select a different option \n')
+        if add == "N":
+            print("Sure, select a different option \n")
             return
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')
         # When the answer is not correct, the program will start again
@@ -214,13 +247,13 @@ def add_event():
 print("Welcome to your Agenda\n")
 print(now.strftime("Today is %A, %Y-%m-%d %H:%M \n"))
 
-while True:          ################# should I put this into a function? ############################################
+while True:  
     # Ask for an operation
     oper_selected = weekly_agenda()
 
-    if oper_selected == '1':
+    if oper_selected == "1":
         check_week()
-    if oper_selected == '2':
+    if oper_selected == "2":
         add_event()
-    if oper_selected == '3':
+    if oper_selected == "3":
         exit_program()
