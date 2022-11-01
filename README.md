@@ -1,7 +1,7 @@
 # Project 3
-# MyAgenda
+# Agenda
 
-'MyAgenda’ is a small project built using Python language. This program will allow the user to add, read, or cancel event and tasks from his Agenda.csv files
+'Agenda’ is a small project built using Python language. This program will allow the user to add, read, or cancel event and tasks from his Agenda.csv files
 
 INSERT PIC FROM AM I RESPONSIVE HERE
 
@@ -31,7 +31,7 @@ The program will run, until the user decides to shut it down, by selecting the e
 
 ## Strategy:
 
-'MyAgenda’ had been created with the intention of allowing the user to plan his weeks ahead of time and remind him/herself of the events/tasks of the month.
+'Agenda’ had been created with the intention of allowing the user to plan his weeks ahead of time and remind him/herself of the events/tasks of the month, by letting her/him check the agenda.
 
 No graphic had been added to this project, following directions of the passing criteria, and to allow deployment through Heroku.
 
@@ -40,12 +40,13 @@ No graphic had been added to this project, following directions of the passing c
 -	As an user I would like to easily create an event for my agenda
 -	Save such event, displayed on the date of its occurrence
 -	Receive clear instruction if the command given are not correct
+-   Exit the Agenda once I've done with what I wanted to do
 
 The stories goals above are reached by:
 -	Let the user choose the initial task to perform once the program starts
 -	Let the user decide if the task written will be saved or not in the agenda file
--	Displaying clear options for the user to choose from, and promptly remind or suggest the right input to select to continue the program
-
+-	Displaying clear options for the user to choose from, and promptly remind or suggest the right input to continue the program
+-   By providing the user with an exit option
 
 # Website Design
 
