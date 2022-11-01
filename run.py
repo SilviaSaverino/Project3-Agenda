@@ -20,7 +20,7 @@ now = datetime.datetime.now()  # from datetime
 daysList = [[] for x in range(31)]
 
 firstRow = [
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
     '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
     '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
 
@@ -59,7 +59,7 @@ def check_week():
             print('Loading complete.\n')
             read_file()
             exit_program()
-            #return
+            # return
         if correct == 'N':
             print('Sure, select a different option \n')
             return
@@ -71,7 +71,7 @@ def read_file():
     '''
     Open the csv.file
     '''
-    with open('testing.csv', 'r') as file:
+    with open('testing.csv', 'r') as file:  # Not sure about this errors here ###########################
         reader = csv.reader(file)
         print(file.read())
         file.close()
@@ -114,7 +114,7 @@ def request_day():
         day = int(input('Choose a day of the month:\n'))
         if day in range(len(daysList)):
             print(f'{day} sounds like a good day!\n')
-            return day 
+            return day
         print(f'Sadly {day} is not a valid option:\n')
 
 
@@ -123,7 +123,7 @@ def request_time():
     Ask the user if she/he would like to perform her/his task during
     the morning, afternoon, evening or at night.
     """
-    while True:
+    while True:  # here below is giving me one more yellow error #########################################
         time = str(input('Any particular time of the day?\n').upper())
         if time == 'MORNING':
             print('You should do this between', MORNING)
@@ -175,7 +175,7 @@ def file_creation():
     '''
     Create file csv to store user inputs
     '''
-    with open('testing.csv', 'w', newline='') as file:
+    with open('testing.csv', 'w', newline='') as file:  ############################one more yellow##################
         writer = csv.writer(file)
         writer.writerow(firstRow)
         writer.writerow(daysList)
