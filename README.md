@@ -85,3 +85,44 @@ Should the user select option 2 - Add event, the program will show the user a mi
 Once the user provide such information, the program will print it back and check if the user would like to save such a task or now. If not, the program will check if the user would like to exit the program; if yes the program will update the user with the saving progress and once done will check if the user would like to exit.
 
 Should the user select option 3 - Exit Agenda, the program will double check if the user would like to exit, and if so it will update the user with the exiting progress until the program shut down and greet the user; if instead the user would like not to exit, the program will present the user with the three initial options, to check what else she/he would like to do. 
+
+
+## Existing Features
+
+In this release of Agenda, the program is on its simplest version.
+
+A polite welcome will be displayed as soon as the user runs the program, stating also the current date and time.
+
+![screenshot of welcoming message](/assets/images/welcoming.png)
+
+
+
+The user will be then presented with three options, to check what she/he would like to do
+
+![screenshot of user options to choose from](/assets/images/options.png)
+
+
+Should the user select an option not listed, the program will remind/suggest the user that she/he must choose and insert a number from the list.
+
+![screenshot of incorrect option selected message](/assets/images/invalid_option123.png)
+
+
+Should the user select option 2 - Add event. The program will check if this option was intentionally selected and if so will update the user with the loading progress and print a calendar (kindly note in this initial release the calendar is set on Jan 2023)
+
+![screenshot of option chosen checking](/assets/images/add_event_option.png)
+
+
+![screenshot of the calendar](/assets/images/loading.png)
+
+
+Here the user will be asked to choose a day of the month
+
+![screenshot of message asking to pick a day of the month](/assets/images/choosing_day.png)
+
+If the day is not within any date in the calendar, once again the program will prompt the user to select a valid option.
+
+![screenshot of not valid date message](/assets/images/wrong_day.png)
+
+If instead, the day of the month chosen by the user was a valid one, the program will repeat it back and continue with asking for a particular time of that day.
+
+![screenshot of valid date selected message and time of the day question](/assets/images/repeat_chosen_day.png)
