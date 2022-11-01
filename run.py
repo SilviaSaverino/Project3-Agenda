@@ -87,8 +87,8 @@ def check_week():
             time.sleep(1.5)
             print("Loading complete.\n")
             read_file()
-            exit_program()
-            # return
+            print('All done. Anything else?\n')
+            return
         if correct == "N":
             print("Sure, select a different option \n")
             return
@@ -110,7 +110,7 @@ def exit_program():
     """
     Exit the program if the user would like to do so.
     """
-    exiting = str(input("Would you like to exit the Agenda? Y/N\n")).upper()
+    exiting = str(input("Exit the Agenda? Y/N\n")).upper()
     while True:
         if exiting == "Y":
             print("Closing the Agenda...\n")
@@ -120,8 +120,9 @@ def exit_program():
         if exiting == "N":
             print("Okay, let's do something else.\n")
             return
+            
         print("Incorrect option, please type Y/N\n")
-        exiting = str(input("Would you like to exit the Agenda? Y/N\n")).upper()
+        exiting = str(input("Exit the Agenda? Y/N\n")).upper()
         continue
 
 
@@ -152,9 +153,7 @@ def request_time():
     Ask the user if she/he would like to perform her/his task during
     the morning, afternoon, evening or at night.
     """
-    while (
-        True
-    ):  # here below is giving me one more yellow error #########################################
+    while True:
         time = str(input("Any particular time of the day?\n").upper())
         if time == "MORNING":
             print("You should do this between", MORNING)
@@ -193,22 +192,22 @@ def save_task(day, day_span, task_detail):
             daysList[day - 1].append(
                 day_span + "your task is to: " + task_detail
             )
-            print("All done. Task saved.")
-            print(daysList)
+            print("Task saved.\n")
+            print('All done. Anything else? \n')
 
             return
         if saving == "N":
             print("Okay then. Have a great day")
             return
 
-        print("Invalid option. Type Y for yes, N for no")
+        print("Invalid option. Type Y for yes, N for no\n")
 
 
 def file_creation():
     """
     Create file csv to store user inputs
     """
-    with open("testing.csv", "w", newline="") as file:  
+    with open("testing.csv", "w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(firstRow)
         writer.writerow(daysList)
@@ -232,7 +231,7 @@ def add_event():
             # saving function below
             save_task(day, day_span, task_info)
             file_creation()
-
+            
             return
         if add == "N":
             print("Sure, select a different option \n")
@@ -247,7 +246,7 @@ def add_event():
 print("Welcome to your Agenda\n")
 print(now.strftime("Today is %A, %Y-%m-%d %H:%M \n"))
 
-while True:  
+while True:
     # Ask for an operation
     oper_selected = weekly_agenda()
 
