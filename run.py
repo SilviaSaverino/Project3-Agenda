@@ -1,5 +1,3 @@
-#import pickle  # Allows to save your data once you've done using this program
-
 import datetime  # Get and allows to display actual date and time
 
 import time  # Allows to set a time interval of x sec between operations
@@ -17,7 +15,7 @@ now = datetime.datetime.now()  # from datetime
 
 # Creates an array of 31 days with nested arrays ; index[1] of each index[0]
 # for each of the 31 arrays,will be add an event underneath
-daysList = [[] for x in range(31)]
+daysList = [[] for x in range(32)]
 
 firstRow = [
     "1",
