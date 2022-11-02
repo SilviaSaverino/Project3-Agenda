@@ -75,7 +75,7 @@ def weekly_agenda():
     """
     while True:
         print("What would you like to do? Insert one of the following:\n")
-        choice = input("1-Add event\n2-Check your Agenda\n3-Exit Agenda\n")
+        choice = input("1-Check your Agenda\n2-Add event\n3-Exit Agenda\n")
         if choice == "1" or choice == "2" or choice == "3":
             return choice
         print("Incorrect option. Your input must be a number from the list \n")
@@ -251,8 +251,8 @@ while True:
     oper_selected = weekly_agenda()
 
     if oper_selected == "1":
-        add_event()
+        check_agenda()        
     if oper_selected == "2":
-        check_agenda()
+        add_event()
     if oper_selected == "3":
         exit_program()
