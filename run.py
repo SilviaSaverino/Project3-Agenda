@@ -11,10 +11,11 @@ import csv
 # Costants and Global variables
 ###
 
+
 now = datetime.datetime.now()  # from datetime
 
 # Creates an array of 31 days with nested arrays ; index[1] of each index[0]
-# for each of the 31 arrays,will be add an event underneath
+# for each of the 31 arrays, will be added an event underneath
 daysList = [[] for x in range(32)]
 
 firstRow = [
@@ -55,7 +56,7 @@ firstRow = [
 MORNING = "anytime from 7:00 to 12:00 "
 AFTERNOON = "anytime from 12:00 to 18:00 "
 EVENING = "anytime from 18:00 to 23:00 "
-NIGHT = "anytime from 23:00 to 7:00"
+NIGHT = "anytime from 23:00 to 7:00 "
 
 
 ###
@@ -73,7 +74,7 @@ def weekly_agenda():
         print("Incorrect option. Your input must be a number from the list \n")
 
 
-def check_week():
+def check_agenda():
     """
     Check if the user wants to check his/her agenda and runs
     functions accordingly to Y or N choice.
@@ -245,6 +246,6 @@ while True:
     if oper_selected == "1":
         add_event()
     if oper_selected == "2":
-        check_week()
+        check_agenda()
     if oper_selected == "3":
         exit_program()
