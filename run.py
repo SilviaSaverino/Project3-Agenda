@@ -127,8 +127,8 @@ def show_calendar():
     """
     Shows an actual calendar to the user, for a better user experience.
     """
-    c = calendar.TextCalendar(calendar.MONDAY)
-    future_date = c.formatmonth(2023, 1)  # The month displayed is Jan 2023
+    the_cal = calendar.TextCalendar(calendar.MONDAY)
+    future_date = the_cal.formatmonth(2023, 1)  # The month displayed is Jan 2023
     print("Calendar", future_date)
 
 
