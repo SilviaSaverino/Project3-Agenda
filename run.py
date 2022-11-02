@@ -1,3 +1,10 @@
+'''
+Agenda - Milestone project 3. Built with python language
+for educational purpose only.
+'''
+###
+# Modules
+###
 import datetime  # Get and allows to display actual date and time
 
 import time  # Allows to set a time interval of x sec between operations
