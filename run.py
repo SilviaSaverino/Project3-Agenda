@@ -128,7 +128,7 @@ def show_calendar():
     Shows an actual calendar to the user, for a better user experience.
     """
     the_cal = calendar.TextCalendar(calendar.MONDAY)
-    future_date = the_cal.formatmonth(2023, 1)  # The month displayed is Jan 2023
+    future_date = the_cal.formatmonth(2023, 1)
     print("Calendar", future_date)
 
 
@@ -165,7 +165,7 @@ def request_time():
         if times == "NIGHT":
             print("You should do this", NIGHT)
             return NIGHT
-        print('Not sure what you mean...Let me check again\n')        
+        print('Not sure what you mean...Let me check again\n')
 
 
 def request_task():
@@ -244,9 +244,7 @@ while True:
 
     if oper_selected == "1":
         add_event()
-        
     if oper_selected == "2":
         check_week()
-        
     if oper_selected == "3":
         exit_program()
