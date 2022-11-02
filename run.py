@@ -118,7 +118,7 @@ def exit_program():
         if exiting == "N":
             print("Okay, let's do something else.\n")
             return
-        print("Incorrect option, please type Y/N\n")
+        print("Incorrect option, please type Y for yes, N for no\n")
         exiting = str(input("Exit the Agenda? Y/N\n")).upper()
         continue
 
@@ -152,17 +152,17 @@ def request_time():
     """
     while True:
         print("Any particular time of the day? Select one of these options")
-        time = str(input("morning, afternoon, evening or night?\n").upper())
-        if time == "MORNING":
+        times = str(input("morning, afternoon, evening or night?\n").upper())
+        if times == "MORNING":
             print("You should do this between", MORNING)
             return MORNING
-        if time == "AFTERNOON":
+        if times == "AFTERNOON":
             print("You should do this between", AFTERNOON)
             return AFTERNOON
-        if time == "EVENING":
+        if times == "EVENING":
             print("You should do this between", EVENING)
             return EVENING
-        if time == "NIGHT":
+        if times == "NIGHT":
             print("At night?", NIGHT)
 
 
@@ -182,7 +182,7 @@ def save_task(day, day_span, task_detail):
     while True:
         saving = input(str("Would you like to save this task? Y/N \n")).upper()
         if saving == "Y":
-            print("Cool. Saving your task")
+            print("Cool. Saving your task\n")
             time.sleep(1)
             daysList[day - 1].append(day_span + "you should:" + task_detail)
             print("Task saved.\n")
