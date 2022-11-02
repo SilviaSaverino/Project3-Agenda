@@ -291,3 +291,20 @@ This is exactly what is then printed in the terminal, before presenting the user
 
 
 # Validation
+
+# Deployment
+
+
+# Credits
+
+## Content
+The content of this program has been created by the owner and all of the questions either in form of input or print similar to any other question asked by a different program is purely coincidental.
+
+## Acknowledgements
+
+I would like to acknowledge the following people who had been helpul and supportive during the creation of 'Agenda'
+
+    Francesco Rubino
+    Spencer Barriball
+    Martina and Cosimo Toppi
+    The Slack community of 'Code Institute' ~ in particular Harry Dhillon for her prompt replies and great tips
