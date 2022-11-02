@@ -203,7 +203,7 @@ In the example above the user originally selected day 2 from the calendar, so th
 
 At this point the program will inform the user that everything she/he asked has been done, and check if there is anything else to be done - here once again the three options will be displayed.
 
-KINDLY NOTE: For the scenario in which the user select option 2, as a first option after starting the program, please see Fixed Problems section of this readme file. 
+KINDLY NOTE: For the scenario in which the user select option 2, as a first option after starting the program, please see 'Fixed Problems & Testing' section of this readme file. 
 
 
 Finally, should the user select option 3 - Exit Agenda , the program will check if this option is the correct one selected and if indeed the user would like to exit.
@@ -226,3 +226,50 @@ If option 3 is not what the user would like to do, the program will aknowledge t
 If this was the intention of the user, some exiting progress messages will be displayed and the Agenda program will shut down, after a polite 'Bye' message.
 
 ![screenshot of exiting progress](/assets/images/exit_complete.png)
+
+
+# Technologies used
+
+Kindly, find below some of the technologies and websites used to complete this project. Follow the link to their websites to check them out if needed.
+
+-   [W3Schools](https://www.w3schools.com/)
+    - Used to check python language lessons and find solutions to some bugs
+-   [Youtube](https://www.youtube.com/)
+    - Used to check some tutorials about python language and overall to have an idea of what I could have done as a project. 
+-   [LucidChart](https://www.lucidchart.com/pages/)
+    - Used to create the flow diagram to have a better idea of the program logic to follow
+-	[GitHub](https://github.com/)
+	- Used to store code for the project after being pushed.
+-	[Git](https://git-scm.com/)
+	- Used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+-	[Gitpod](https://www.gitpod.io/)
+	- Used as the development environment.
+-	[Heroku](https://id.heroku.com/login)
+    - Used to deploy my project.
+
+
+# Fixed Problems & Testing
+
+During the whole coding process I've been checking for any errors that could have interfered with the program running smoothly.
+
+Many testing had to be run to double check the user inputs and their validity, or better said the invalid option chosen either by mistake or intentionally.
+
+Minor problems have been fixed throughtout the coding , mainly about indentation and syntax.
+
+The actual big issue I fixed with a simple solution presented itself in the scenario when the user, right after starting the program would choose 'option 1.
+
+My initial idea was that the program, once running , would have created the 'Agenda.csv' file by itself, whilst the user selected the various options diplayed to him/her. 
+However, in this case it would have meant that there was no file Agenda at all to check at the starting point of the program, and so, if the user were to select 'option 1 - Check the agenda' the program would have crushed.
+
+This had been fixed by reverting into creating the file myself, and add a first line in it stating that the 'Agenda' is at this stage empty, and suggesting the user to select a different option before opting for this, followed by an empty line 2 to increase readability once printed in the terminal.
+
+## -from file Agenda.csv
+![screenshot of Agenda file](/assets/images/empty_agenda.png)
+
+## -from the terminal
+This is exactly what is then printed in the terminal, before presenting the user with the three initial options.
+
+![screenshot of empty agenda message](/assets/images/empty_agenda_terminal.png)
+
+
+# Validation
