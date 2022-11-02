@@ -251,7 +251,7 @@ while True:
     oper_selected = weekly_agenda()
 
     if oper_selected == "1":
-        check_agenda()        
+        check_agenda()
     if oper_selected == "2":
         add_event()
     if oper_selected == "3":
