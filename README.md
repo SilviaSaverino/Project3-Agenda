@@ -228,16 +228,34 @@ If this was the intention of the user, some exiting progress messages will be di
 ![screenshot of exiting progress](/assets/images/exit_complete.png)
 
 
+# Python libraries
+
+To build this project some built in python libraries had been used, whilst others had been installed first.
+
+Find a list below of the libraries I've imported, with some information about their purpose and usage.
+
+- [Datetime](https://docs.python.org/3/library/datetime.html):
+    -The datetime module supplies classes for manipulating dates and times.
+- [Time](https://docs.python.org/3/library/time.html?highlight=time#module-time)
+    - This module provides various time-related functions. I've been using it to add some second of program time sleep, to slow down its execution and give the user an impression of 'loading' or 'exiting' progressess.
+- [Calendar](https://docs.python.org/3/library/calendar.html?highlight=calendar#module-calendar)
+    - Used to display the actual calendar to the user.
+- [Csv](https://docs.python.org/3/library/csv.html?highlight=csv#module-csv) 
+    -The so-called CSV (Comma Separated Values) format is the most common import and export format for spreadsheets and databases. 
+
+
 # Technologies used
 
 Kindly, find below some of the technologies and websites used to complete this project. Follow the link to their websites to check them out if needed.
 
 -   [W3Schools](https://www.w3schools.com/)
-    - Used to check python language lessons and find solutions to some bugs
+    - Used to check python language lessons and find solutions to some bugs.
+-   [Python](https://www.python.org/)
+    - Used to elaborate some python concepts.    
 -   [Youtube](https://www.youtube.com/)
     - Used to check some tutorials about python language and overall to have an idea of what I could have done as a project. 
 -   [LucidChart](https://www.lucidchart.com/pages/)
-    - Used to create the flow diagram to have a better idea of the program logic to follow
+    - Used to create the flow diagram to have a better idea of the program logic to follow.
 -	[GitHub](https://github.com/)
 	- Used to store code for the project after being pushed.
 -	[Git](https://git-scm.com/)
