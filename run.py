@@ -55,7 +55,7 @@ firstRow = [
 MORNING = "anytime from 7:00 to 12:00 "
 AFTERNOON = "anytime from 12:00 to 18:00 "
 EVENING = "anytime from 18:00 to 23:00 "
-NIGHT = "You deserve some sleep! Select a different time of the day.\n"
+NIGHT = "anytime from 23:00 to 7:00"
 
 
 ###
@@ -67,7 +67,7 @@ def weekly_agenda():
     """
     while True:
         print("What would you like to do? Insert one of the following:\n")
-        choice = input("1-Check your Agenda\n2-Add event\n3-Exit Agenda\n")
+        choice = input("1-Add event\n2-Check your Agenda\n3-Exit Agenda\n")
         if choice == "1" or choice == "2" or choice == "3":
             return choice
         print("Incorrect option. Your input must be a number from the list \n")
@@ -151,19 +151,21 @@ def request_time():
     the morning, afternoon, evening or at night.
     """
     while True:
-        print("Any particular time of the day? Select one of these options")
-        times = str(input("morning, afternoon, evening or night?\n").upper())
+        print("Any particular time of the day? Select one of these options:")
+        times = str(input("-Morning\n-Afternoon\n-Evening\n-Night\n").upper())
         if times == "MORNING":
-            print("You should do this between", MORNING)
+            print("You should do this", MORNING)
             return MORNING
         if times == "AFTERNOON":
-            print("You should do this between", AFTERNOON)
+            print("You should do this", AFTERNOON)
             return AFTERNOON
         if times == "EVENING":
-            print("You should do this between", EVENING)
+            print("You should do this", EVENING)
             return EVENING
         if times == "NIGHT":
-            print("At night?", NIGHT)
+            print("You should do this", NIGHT)
+            return NIGHT
+        print('Not sure what you mean...Let me check again\n')        
 
 
 def request_task():
@@ -241,8 +243,10 @@ while True:
     oper_selected = weekly_agenda()
 
     if oper_selected == "1":
-        check_week()
-    if oper_selected == "2":
         add_event()
+        
+    if oper_selected == "2":
+        check_week()
+        
     if oper_selected == "3":
         exit_program()
