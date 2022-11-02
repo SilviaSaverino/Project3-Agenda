@@ -126,7 +126,7 @@ If the day is not within any date in the calendar, once again the program will p
 ![screenshot of not valid date message](/assets/images/wrong_day.png)
 
 
-If instead, the day of the month chosen by the user was a valid one, the program will repeat it back and continue with asking for a particular time of that day.
+If instead, the day of the month chosen by the user is a valid one, the program will repeat it back and continue with asking for a particular time of that day.
 
 ![screenshot of valid date selected message and time of the day question](/assets/images/time_of_day.png)
 
@@ -149,11 +149,8 @@ Night message:
 
 ![screenshot of night choice message](/assets/images/night.png)
 
-
 Should the user write something else by mistake or intentionally, once again the program will ask to select one of the options listed.
-
-![screenshot of invalid choice message](/assets/images/invalid_time_day.png)
-
+![screenshot of invalid time of the day message](/assets/images/invalid_time_of_day.png)
 
 Finally, the program will ask for the task info and it will show it back to the user once done writing
 
@@ -174,7 +171,7 @@ If instead the user would like to indeed save the task, following messages will 
 
 ![screenshot of saving progress message](/assets/images/saving_task.png)
 
-
+At this point the file Agenda.csv will be updated with the user task, written underneath the selected day of the month.
 
 
 Finally, the program will check if the user would like to do anything else. And it restarts again.
@@ -192,7 +189,7 @@ Once again it will check for the right input
 ![screenshot of valid input option 1 message](/assets/images/invalid_option1.png)
 
 
-If the selection of option 1 or if the user has changed hit/her mind, and doesn't want check the agenda afterall, the program will display a message and once again the three initial options to choose from
+If the selection of option 1 or if the user has changed his/her mind, and doesn't want to check the agenda afterall, the program will display a message and once again the three initial options to choose from
 
 ![screenshot of different option to choose from](/assets/images/negative_option1.png)
 
@@ -204,7 +201,10 @@ If instead the user would really like to check the agenda,the loading progress w
 
 In the example above the user originally selected day 2 from the calendar, so the task 'send email to Ellie' has been written on index[1] of the list... and so on.
 
-Once again the program will inform the user that everything she/he asked has been done, and check again if is there anything else to be done - here once again the three options will be displayed.
+At this point the program will inform the user that everything she/he asked has been done, and check if there is anything else to be done - here once again the three options will be displayed.
+
+KINDLY NOTE: For the scenario in which the user select option 2, as a first option after starting the program, please see Fixed Problems section of this readme file. 
+
 
 Finally, should the user select option 3 - Exit Agenda , the program will check if this option is the correct one selected and if indeed the user would like to exit.
 
@@ -212,6 +212,7 @@ Finally, should the user select option 3 - Exit Agenda , the program will check 
 
 
 Also here for any invalid options a message will be shown to the user, and the question will be fired again.
+
 ![screenshot of invalid option for option3](/assets/images/invalid.png)
 
 
