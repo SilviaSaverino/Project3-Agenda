@@ -288,6 +288,27 @@ Validation was done using PEP8 and the Black library online as shown in image
 
 # Deployment
 
+I follow these steps to deploy my project.
+
+See below for the Github procedure, and further down for the Heroku one.
+
+## Github
+
+### Forking the GitHub repository
+To view and edit the code without affecting the original repository:
+•	Locate the GitHub repository.
+•	Click on Fork, in the top right-hand corner.
+•	This will take you to your own repository to a fork with the same name as the original branch.
+
+
+### Creating a local clone of your project
+•	Go to the GitHub repository. 
+•	Click on Code to the right of the screen, click on HTTPs and copy the link.
+•	Open Git Bash and change the current working directory to the location where you want the cloned directory.
+•	Type git clone, paste the URL you copied earlier, and press Enter to create your local clone.
+
+## Heroku
+
 
 # Credits
 
