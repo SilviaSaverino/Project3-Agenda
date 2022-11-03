@@ -229,13 +229,13 @@ If this were the user's intention, some exit progress messages would be displaye
 Please find a list below of the libraries I have imported, with some information about their purpose and usage.
 
 - [Datetime](https://docs.python.org/3/library/datetime.html):
-    -The datetime module supplies classes for manipulating dates and times.
+    - The datetime module supplies classes for manipulating dates and times.
 - [Time](https://docs.python.org/3/library/time.html?highlight=time#module-time)
     - This module provides various time-related functions. I've been using it to add some second of program time sleep, to slow down its execution and give the user an impression of 'loading' or 'exiting' progressess.
 - [Calendar](https://docs.python.org/3/library/calendar.html?highlight=calendar#module-calendar)
     - Used to display the actual calendar to the user.
 - [Csv](https://docs.python.org/3/library/csv.html?highlight=csv#module-csv) 
-    -The so-called CSV (Comma Separated Values) format is the most common import and export format for spreadsheets and databases. 
+    - The so-called CSV (Comma Separated Values) format is the most common import and export format for spreadsheets and databases. 
 
 
 # Technologies used
@@ -284,7 +284,9 @@ This had been fixed by reverting to creating the file myself and adding the firs
 
 # Validation
 Validation was done using PEP8 and the Black library online as shown in image
+
 ![screenshot of validation PEP8](/assets/images/validation.png)
+
 
 # Deployment
 
@@ -292,22 +294,40 @@ I follow these steps to deploy my project.
 
 See below for the Github procedure, and further down for the Heroku one.
 
-## Github
-
-### Forking the GitHub repository
+## Forking the GitHub repository
 To view and edit the code without affecting the original repository:
 •	Locate the GitHub repository.
 •	Click on Fork, in the top right-hand corner.
 •	This will take you to your own repository to a fork with the same name as the original branch.
 
 
-### Creating a local clone of your project
+## Creating a local clone of your project
 •	Go to the GitHub repository. 
 •	Click on Code to the right of the screen, click on HTTPs and copy the link.
 •	Open Git Bash and change the current working directory to the location where you want the cloned directory.
 •	Type git clone, paste the URL you copied earlier, and press Enter to create your local clone.
 
 ## Heroku
+The following steps were taken to deploy this project.
+
+- Login or create a new account on Heroku.
+
+- Click on the Create New App button on the dashboard. If you are a new user, the Create New App button will appear further down the screen.
+- Enter a unique name for the application, select the appropriate region and click the Create App button.
+- In the Application Configuration page, click on the Settings tab. 
+- Scroll down to the Config Vars section to set up the credentials used by the application to access the spreadsheet data.
+- Click Reveal Config Vars and enter ‘PORT’ in the Key fieldand ‘8000’ in the Value field and click Add.
+- Scroll down the Settings page to Buildpacks and click Add Buildpack. 
+- Select Python form the pop up window and click on Save Changes. 
+- Click Add Buildpack again, this time select Node.js from the pop up window and save changes. 
+- It is very important that Python is listed first and Node.js underneath.
+- On the Application Configuration page, click on the Deploy tab.
+- Select GitHub as the Deployment Method and confirm that you want to connect to GitHub if prompted. 
+- Enter the name of the GitHub repository used for this project and click on Connect to link up the Heroku app to the GitHub repository.
+- Scroll down to the Automatic Deploys section and click Enable Automatic Deploys or choose to Manually Deploy by clicking on Deploy Branch.
+- Once the program runs, the message “The app was successfully deployed” will appear, click View. 
+- The application can also be run from the Application Configuration page by clicking on the Open App button.
+
 
 
 # Credits
@@ -317,7 +337,7 @@ The content of this program has been created by the owner and all of the questio
 
 ## Acknowledgements
 
-The following people who had been helpful and supportive during the creation of 'Agenda.'
+A big thank you goes to the following people who had been helpful and supportive during the creation of 'Agenda.'
 
 - Francesco Rubino
 - Spencer Barriball
