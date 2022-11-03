@@ -1,30 +1,23 @@
-'''
+"""
 Agenda - Milestone project 3. Built with python language
 for educational purpose only.
-'''
+"""
 ###
 # Modules
 ###
 import datetime  # Get and allows to display actual date and time
-
 import time  # Allows to set a time interval of x sec between operations
-
 import calendar  # calendar will show a standard calendar
-
 import csv
-
 
 ###
 # Costants and Global variables
 ###
-
-
 now = datetime.datetime.now()  # from datetime
 
 # Creates an array of 31 days with nested arrays ; index[1] of each index[0]
 # for each of the 31 arrays, will be added an event underneath
 daysList = [[] for x in range(32)]
-
 firstRow = [
     "1",
     "2",
@@ -66,9 +59,6 @@ EVENING = "anytime from 18:00 to 23:00 "
 NIGHT = "anytime from 23:00 to 7:00 "
 
 
-###
-# Functions
-###
 def weekly_agenda():
     """
     Starts the programm asking the user which task will be execute
@@ -94,7 +84,7 @@ def check_agenda():
             print("Loading complete.\n")
             time.sleep(1)
             read_file()
-            print('All done. Anything else?\n')
+            print("All done. Anything else?\n")
             return
         if correct == "N":
             print("Sure, select a different option \n")
@@ -173,7 +163,7 @@ def request_time():
         if times == "NIGHT":
             print("You should do this", NIGHT)
             return NIGHT
-        print('Not sure what you mean...Let me check again\n')
+        print("Not sure what you mean...Let me check again\n")
 
 
 def request_task():
@@ -196,13 +186,11 @@ def save_task(day, day_span, task_detail):
             time.sleep(1)
             daysList[day - 1].append(day_span + "you should:" + task_detail)
             print("Task saved.\n")
-            print('All done. Anything else? \n')
-
+            print("All done. Anything else? \n")
             return
         if saving == "N":
             print("Okay then. Let's check again\n")
             return
-
         print("Invalid option. Type Y for yes, N for no\n")
 
 
@@ -240,19 +228,22 @@ def add_event():
         print('Incorrect option. Input "Y" for yes, or "N" for no \n')
 
 
-###
-# Entry point
-###
-print("Welcome to your Agenda\n")
-print(now.strftime("Today is %A, %Y-%m-%d %H:%M \n"))
+def entry_point():
+    """
+    This function handles the overall project loop
+    """
+    print("Welcome to your Agenda\n")
+    print(now.strftime("Today is %A, %Y-%m-%d %H:%M \n"))
+    while True:
+        # Ask for an operation
+        oper_selected = weekly_agenda()
+        if oper_selected == "1":
+            check_agenda()
+        if oper_selected == "2":
+            add_event()
+        if oper_selected == "3":
+            exit_program()
 
-while True:
-    # Ask for an operation
-    oper_selected = weekly_agenda()
 
-    if oper_selected == "1":
-        check_agenda()
-    if oper_selected == "2":
-        add_event()
-    if oper_selected == "3":
-        exit_program()
+if __name__ == "__main__":
+    entry_point()
