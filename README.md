@@ -283,6 +283,8 @@ This had been fixed by reverting to creating the file myself and adding the firs
 
 
 # Validation
+Validation was done using PEP8 and the Black library online as shown in image
+![screenshot of validation PEP8](/assets/images/validation.png)
 
 # Deployment
 
