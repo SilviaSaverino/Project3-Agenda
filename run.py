@@ -235,7 +235,6 @@ def entry_point():
     print("Welcome to your Agenda\n")
     print(now.strftime("Today is %A, %Y-%m-%d %H:%M \n"))
     while True:
-        # Ask for an operation
         oper_selected = weekly_agenda()
         if oper_selected == "1":
             check_agenda()
