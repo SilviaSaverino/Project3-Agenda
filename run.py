@@ -2,21 +2,21 @@
 Agenda - Milestone project 3. Built with python language
 for educational purpose only.
 """
-###
+
 # Modules
-###
+
 import datetime  # Get and allows to display actual date and time
 import time  # Allows to set a time interval of x sec between operations
 import calendar  # calendar will show a standard calendar
-import csv
+import csv   # Import and export format for spreadsheets and databases.
 
-###
+
 # Costants and Global variables
-###
+
 now = datetime.datetime.now()  # from datetime
 
 # Creates an array of 31 days with nested arrays ; index[1] of each index[0]
-# for each of the 31 arrays, will be added an event underneath
+# for each of the 31 arrays, will be add an event underneath
 daysList = [[] for x in range(32)]
 firstRow = [
     "1",
