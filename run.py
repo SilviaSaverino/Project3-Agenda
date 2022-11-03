@@ -96,7 +96,7 @@ def read_file():
     """
     Open the csv.file
     """
-    with open("Agenda.csv", "r") as file:
+    with open("agenda.csv", "r") as file:
         csv.reader(file)
         print(file.read())
         file.close()
@@ -198,7 +198,7 @@ def file_creation():
     """
     Create file csv to store user inputs
     """
-    with open("Agenda.csv", "w", newline="") as file:
+    with open("agenda.csv", "w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(firstRow)
         writer.writerow(daysList)
